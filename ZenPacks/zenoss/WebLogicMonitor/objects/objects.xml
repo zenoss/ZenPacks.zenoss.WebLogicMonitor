@@ -1,0 +1,5192 @@
+<?xml version="1.0"?>
+<objects>
+<!-- ('', 'zport', 'dmd', 'Devices', 'Server', 'WebLogic') -->
+<object id='/zport/dmd/Devices/Server/WebLogic' module='Products.ZenModel.DeviceClass' class='DeviceClass'>
+<tomanycont id='rrdTemplates'>
+<object id='WebLogic Core' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<tomanycont id='datasources'>
+<object id='WLS Restarts' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:Name=myserver,Type=ServerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+RestartsTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='RestartsTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Sockets Open' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:Name=myserver,Type=ServerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+OpenSocketsCurrentCount
+</property>
+<tomanycont id='datapoints'>
+<object id='OpenSocketsCurrentCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Sockets Opened Total Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:Name=myserver,Type=ServerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+SocketsOpenedTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='SocketsOpenedTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+<tomanycont id='graphDefs'>
+<object id='WebLogic Open Sockets' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+sockets
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<tomanycont id='graphPoints'>
+<object id='OpenSocketsCurrentCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Sockets Open_OpenSocketsCurrentCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='SocketsOpenedTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Sockets Opened Total Count_SocketsOpenedTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic Restarts' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<tomanycont id='graphPoints'>
+<object id='RestartsTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Restarts_RestartsTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic JCA' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<tomanycont id='datasources'>
+<object id='WLS Active RA Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=ConnectorService,Type=ConnectorServiceRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+ActiveRACount
+</property>
+<tomanycont id='datapoints'>
+<object id='ActiveRACount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Current Pool Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=ConnectorService,Type=ConnectorServiceRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+ConnectionPoolCurrentCount
+</property>
+<tomanycont id='datapoints'>
+<object id='ConnectionPoolCurrentCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS RA Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=ConnectorService,Type=ConnectorServiceRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+RACount
+</property>
+<tomanycont id='datapoints'>
+<object id='RACount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Total Pools' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=ConnectorService,Type=ConnectorServiceRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+ConnectionPoolsTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='ConnectionPoolsTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+<tomanycont id='graphDefs'>
+<object id='WebLogic JCA Pools' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+pools
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<tomanycont id='graphPoints'>
+<object id='ConnectionPoolCurrentCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Current Pool Count_ConnectionPoolCurrentCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='ConnectionPoolsTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Total Pools_ConnectionPoolsTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic RA Pools' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+pools
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<tomanycont id='graphPoints'>
+<object id='ActiveRACount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Active RA Count_ActiveRACount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='RACount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS RA Count_RACount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic JMS' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<tomanycont id='datasources'>
+<object id='WLS Completed Requests' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JmsDispatcher,Type=WorkManagerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+CompletedRequests
+</property>
+<tomanycont id='datapoints'>
+<object id='CompletedRequests' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Pending Requests' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JmsDispatcher,Type=WorkManagerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+PendingRequests
+</property>
+<tomanycont id='datapoints'>
+<object id='PendingRequests' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Stuck Thread Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JmsDispatcher,Type=WorkManagerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+StuckThreadCount
+</property>
+<tomanycont id='datapoints'>
+<object id='StuckThreadCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Total Connections' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=myserver.jms,Type=JMSRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+ConnectionsTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='ConnectionsTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Total Servers' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=myserver.jms,Type=JMSRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+JMSServersTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='JMSServersTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+<tomanycont id='graphDefs'>
+<object id='WebLogic JMS Connections' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+conn
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<tomanycont id='graphPoints'>
+<object id='ConnectionsTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Total Connections_ConnectionsTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic JMS Servers' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+servers
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+2
+</property>
+<tomanycont id='graphPoints'>
+<object id='JMSServersTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Total Servers_JMSServersTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic JMS Status' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+messages/threads
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<tomanycont id='graphPoints'>
+<object id='CompletedRequests' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Completed Requests_CompletedRequests
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='PendingRequests' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Pending Requests_PendingRequests
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='StuckThreadCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+2
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Stuck Thread Count_StuckThreadCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic JMS Destination' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<property type="text" id="description" mode="w" >
+Note: Make sure you update the object name in each data source to reflect your domain, server, and queue name.
+</property>
+<tomanycont id='datasources'>
+<object id='WLS JMS Destination Bytes Current' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+BytesCurrentCount
+</property>
+<tomanycont id='datapoints'>
+<object id='BytesCurrentCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS JMS Destination Bytes Pageable Current Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+BytesPageableCurrentCount
+</property>
+<tomanycont id='datapoints'>
+<object id='BytesPageableCurrentCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS JMS Destination Bytes Paged In' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+BytesPagedInTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='BytesPagedInTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS JMS Destination Bytes Paged Out' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+BytesPagedOutTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='BytesPagedOutTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS JMS Destination Bytes Pending' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+BytesPendingCount
+</property>
+<tomanycont id='datapoints'>
+<object id='BytesPendingCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS JMS Destination Bytes Received' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+BytesReceivedCount
+</property>
+<tomanycont id='datapoints'>
+<object id='BytesReceivedCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS JMS Destination Bytes Threshold Time' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+BytesThresholdTime
+</property>
+<tomanycont id='datapoints'>
+<object id='BytesThresholdTime' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS JMS Destination Consumers Current' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+DestinationsCurrentCount
+</property>
+<tomanycont id='datapoints'>
+<object id='DestinationsCurrentCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS JMS Destination Consumers Total' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+DestinationTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='DestinationTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS JMS Destination Message Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+MessagesCurrentCount
+</property>
+<tomanycont id='datapoints'>
+<object id='MessagesCurrentCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS JMS Destination Message Pageable Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+MessagesPageableCurrentCount
+</property>
+<tomanycont id='datapoints'>
+<object id='MessagesPageableCurrentCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS JMS Destination Messages Paged In' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+MessagesPagedInTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='MessagesPagedInTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS JMS Destination Messages Paged Out' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+MessagesPagedOutTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='MessagesPagedOutTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS JMS Destination Messages Pending Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+MessagesPendingCount
+</property>
+<tomanycont id='datapoints'>
+<object id='MessagesPendingCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS JMS Destination Messages Received' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+MessagesReceivedCount
+</property>
+<tomanycont id='datapoints'>
+<object id='MessagesReceivedCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS JMS Destination Messages Threshold Time' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+MessagesThresholdTime
+</property>
+<tomanycont id='datapoints'>
+<object id='MessagesThresholdTime' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+<tomanycont id='graphDefs'>
+<object id='WebLogic JMS Destination Message Status' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+messages
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<tomanycont id='graphPoints'>
+<object id='MessagesCurrentCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS JMS Destination Message Count_MessagesCurrentCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='MessagesPagedInTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS JMS Destination Messages Paged In_MessagesPagedInTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='MessagesPagedOutTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+2
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS JMS Destination Messages Paged Out_MessagesPagedOutTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='MessagesPendingCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+3
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS JMS Destination Messages Pending Count_MessagesPendingCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='MessagesReceivedCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+4
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS JMS Destination Messages Received_MessagesReceivedCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic JMS Destination Message Status (bytes)' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+bytes
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<tomanycont id='graphPoints'>
+<object id='BytesCurrentCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS JMS Destination Bytes Current_BytesCurrentCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='BytesPagedInTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS JMS Destination Bytes Paged In_BytesPagedInTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='BytesPagedOutTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+2
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS JMS Destination Bytes Paged Out_BytesPagedOutTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='BytesPendingCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+3
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS JMS Destination Bytes Pending_BytesPendingCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='BytesReceivedCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+4
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS JMS Destination Bytes Received_BytesReceivedCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic JTA' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<tomanycont id='datasources'>
+<object id='WLS Abandoned Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+TransactionAbandonedTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='TransactionAbandonedTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Active Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+ActiveTransactionsTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='ActiveTransactionsTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Committed Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+TransactionCommittedTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='TransactionCommittedTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Heuristics Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+TransactionHeuristicsTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='TransactionHeuristicsTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Rollback Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+TransactionRolledBackTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='TransactionRolledBackTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Rollback Timeout Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+TransactionRolledBackTimeoutTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='TransactionRolledBackTimeoutTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Seconds Active Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+SecondsActiveTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='SecondsActiveTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Total Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+TransactionTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='TransactionTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+<tomanycont id='graphDefs'>
+<object id='WebLogic JTA Rollback Timeout Count' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+transactions
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<tomanycont id='graphPoints'>
+<object id='TransactionRolledBackTimeoutTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Rollback Timeout Count_TransactionRolledBackTimeoutTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic JTA Total Transactions' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+transactions
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+2
+</property>
+<tomanycont id='graphPoints'>
+<object id='TransactionTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Total Count_TransactionTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic JTA Transaction Execution Time' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+secs
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+3
+</property>
+<tomanycont id='graphPoints'>
+<object id='SecondsActiveTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Seconds Active Count_SecondsActiveTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic JTA Transactions by Category' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+transactions
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<tomanycont id='graphPoints'>
+<object id='ActiveTransactionsTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Active Count_ActiveTransactionsTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='TransactionAbandonedTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Abandoned Count_TransactionAbandonedTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='TransactionCommittedTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+2
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Committed Count_TransactionCommittedTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='TransactionHeuristicsTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+3
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Heuristics Count_TransactionHeuristicsTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='TransactionRolledBackTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+4
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Rollback Count_TransactionRolledBackTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic JTA Rollbacks' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<tomanycont id='datasources'>
+<object id='WLS Application Total Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+TransactionRolledBackAppTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='TransactionRolledBackAppTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Resource Total Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+TransactionRolledBackResourceTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='TransactionRolledBackResourceTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS System Total Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+TransactionRolledBackSystemTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='TransactionRolledBackSystemTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+<tomanycont id='graphDefs'>
+<object id='WebLogic JTA Rollbacks by Category' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+transactions
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<tomanycont id='graphPoints'>
+<object id='TransactionRolledBackAppTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Application Total Count_TransactionRolledBackAppTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='TransactionRolledBackResourceTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Resource Total Count_TransactionRolledBackResourceTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='TransactionRolledBackSystemTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+2
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS System Total Count_TransactionRolledBackSystemTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic JVM' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<tomanycont id='datasources'>
+<object id='WLS Copy Garbage Collection Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+java.lang:type=GarbageCollector,name=Copy
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+CollectionCount
+</property>
+<tomanycont id='datapoints'>
+<object id='CollectionCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Copy Garbage Collection Time' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+java.lang:type=GarbageCollector,name=Copy
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+CollectionTime
+</property>
+<tomanycont id='datapoints'>
+<object id='CollectionTime' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Daemon Thread Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+java.lang:type=Threading
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+DaemonThreadCount
+</property>
+<tomanycont id='datapoints'>
+<object id='DaemonThreadCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Free Memory' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+java.lang:type=OperatingSystem
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+FreePhysicalMemorySize
+</property>
+<tomanycont id='datapoints'>
+<object id='FreePhysicalMemorySize' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Heap Memory' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+java.lang:type=Memory
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+HeapMemoryUsage
+</property>
+<tomanycont id='datapoints'>
+<object id='used' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS MarkSweep Garbage Collection Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+java.lang:type=GarbageCollector,name=MarkSweepCompact
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+CollectionCount
+</property>
+<tomanycont id='datapoints'>
+<object id='CollectionCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS MarkSweep Garbage Collection Time' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+java.lang:type=GarbageCollector,name=MarkSweepCompact
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+CollectionTime
+</property>
+<tomanycont id='datapoints'>
+<object id='CollectionTime' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Open File Descriptors' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+java.lang:type=OperatingSystem
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+OpenFileDescriptorCount
+</property>
+<tomanycont id='datapoints'>
+<object id='OpenFileDescriptorCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Total Memory' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+java.lang:type=Memory
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+NonHeapMemoryUsage
+</property>
+<tomanycont id='datapoints'>
+<object id='used' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+<tomanycont id='graphDefs'>
+<object id='WebLogic Copy GC Performance' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<tomanycont id='graphPoints'>
+<object id='CollectionCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Copy Garbage Collection Count_CollectionCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='CollectionTime' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Copy Garbage Collection Time_CollectionTime
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic Daemon Threads' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+threads
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+4
+</property>
+<tomanycont id='graphPoints'>
+<object id='DaemonThreadCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Daemon Thread Count_DaemonThreadCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic MarkSweep GC Performance' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<tomanycont id='graphPoints'>
+<object id='CollectionCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS MarkSweep Garbage Collection Count_CollectionCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='CollectionTime' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS MarkSweep Garbage Collection Time_CollectionTime
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic Memory Usage' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+bytes
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+2
+</property>
+<tomanycont id='graphPoints'>
+<object id='free memory' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+2
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Free Memory_FreePhysicalMemorySize
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='heap memory' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Heap Memory_used
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='non-heap memory' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Total Memory_used
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic Open File Descriptors' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+fd
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+3
+</property>
+<tomanycont id='graphPoints'>
+<object id='OpenFileDescriptorCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Open File Descriptors_OpenFileDescriptorCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic Thread Pool' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<tomanycont id='datasources'>
+<object id='WLS Completed Requests' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=ThreadPoolRuntime,Type=ThreadPoolRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+CompletedRequestCount
+</property>
+<tomanycont id='datapoints'>
+<object id='CompletedRequestCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Execute Threads' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=ThreadPoolRuntime,Type=ThreadPoolRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+ExecuteThreadTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='ExecuteThreadTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Idle Threads' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=ThreadPoolRuntime,Type=ThreadPoolRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+ExecuteThreadIdleCount
+</property>
+<tomanycont id='datapoints'>
+<object id='ExecuteThreadIdleCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Queue Length' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=ThreadPoolRuntime,Type=ThreadPoolRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+QueueLength
+</property>
+<tomanycont id='datapoints'>
+<object id='QueueLength' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Throughput' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=ThreadPoolRuntime,Type=ThreadPoolRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+Throughput
+</property>
+<tomanycont id='datapoints'>
+<object id='Throughput' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+<tomanycont id='graphDefs'>
+<object id='WebLogic Thread Pool Execution' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+threads
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+3
+</property>
+<tomanycont id='graphPoints'>
+<object id='ExecuteThreadIdleCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Idle Threads_ExecuteThreadIdleCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='ExecuteThreadTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Execute Threads_ExecuteThreadTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic Thread Pool Queue Length' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+2
+</property>
+<tomanycont id='graphPoints'>
+<object id='QueueLength' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Queue Length_QueueLength
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic Thread Pool Throughput' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<tomanycont id='graphPoints'>
+<object id='Throughput' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Throughput_Throughput
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic Thread Pool Usage' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<tomanycont id='graphPoints'>
+<object id='CompletedRequestCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Completed Requests_CompletedRequestCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic Timer Service' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<tomanycont id='datasources'>
+<object id='WLS Exception Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=TimeEventGenerator,Type=TimeServiceRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+ExceptionCount
+</property>
+<tomanycont id='datapoints'>
+<object id='ExceptionCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Execution Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=TimeEventGenerator,Type=TimeServiceRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+ExecutionCount
+</property>
+<tomanycont id='datapoints'>
+<object id='ExecutionCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Executions per Minute' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=TimeEventGenerator,Type=TimeServiceRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+ExecutionsPerMinute
+</property>
+<tomanycont id='datapoints'>
+<object id='ExecutionsPerMinute' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Scheduled Triggers' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=TimeEventGenerator,Type=TimeServiceRuntime
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+ScheduledTriggerCount
+</property>
+<tomanycont id='datapoints'>
+<object id='ScheduledTriggerCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+<tomanycont id='graphDefs'>
+<object id='WebLogic Timer Scheduled Triggers' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<tomanycont id='graphPoints'>
+<object id='ScheduledTriggerCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Scheduled Triggers_ScheduledTriggerCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic Timer Service Performance' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+transactions
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<tomanycont id='graphPoints'>
+<object id='ExceptionCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Exception Count_ExceptionCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='ExecutionCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Execution Count_ExecutionCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic User Lockouts' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<property type="text" id="description" mode="w" >
+Make sure you update the realm name in the data sources
+</property>
+<tomanycont id='datasources'>
+<object id='WLS Invalid Login Attempts' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=UserLockoutManager,Type=UserLockoutManagerRuntime,RealmRuntime=myrealm,ServerSecurityRuntime=myserver
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+InvalidLoginAttemptsTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='InvalidLoginAttemptsTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Login Attempts While Locked' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=UserLockoutManager,Type=UserLockoutManagerRuntime,RealmRuntime=myrealm,ServerSecurityRuntime=myserver
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+LoginAttemptsWhileLockedTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='LoginAttemptsWhileLockedTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Total Locked Accounts' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=UserLockoutManager,Type=UserLockoutManagerRuntime,RealmRuntime=myrealm,ServerSecurityRuntime=myserver
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+LockedUsersCurrentCount
+</property>
+<tomanycont id='datapoints'>
+<object id='LockedUsersCurrentCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS Total Unlocked Users' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=UserLockoutManager,Type=UserLockoutManagerRuntime,RealmRuntime=myrealm,ServerSecurityRuntime=myserver
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+UnlockedUsersTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='UnlockedUsersTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WLS User Lockouts' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+[True, True]
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=myserver,Name=UserLockoutManager,Type=UserLockoutManagerRuntime,RealmRuntime=myrealm,ServerSecurityRuntime=myserver
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+UserLockoutTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='UserLockoutTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+COUNTER
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+<tomanycont id='graphDefs'>
+<object id='WebLogic User Accounts' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+users
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<tomanycont id='graphPoints'>
+<object id='LockedUsersCurrentCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Total Locked Accounts_LockedUsersCurrentCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='UnlockedUsersTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Total Unlocked Users_UnlockedUsersTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic User Authentication Failures' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+attempts
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+2
+</property>
+<tomanycont id='graphPoints'>
+<object id='InvalidLoginAttemptsTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Invalid Login Attempts_InvalidLoginAttemptsTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='LoginAttemptsWhileLockedTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS Login Attempts While Locked_LoginAttemptsWhileLockedTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='WebLogic User Lockouts' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+users
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<tomanycont id='graphPoints'>
+<object id='UserLockoutTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+WLS User Lockouts_UserLockoutTotalCount
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+</object>
+</objects>
