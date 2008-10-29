@@ -2,6 +2,9 @@
 <objects>
 <!-- ('', 'zport', 'dmd', 'Devices', 'Server', 'WebLogic') -->
 <object id='/zport/dmd/Devices/Server/WebLogic' module='Products.ZenModel.DeviceClass' class='DeviceClass'>
+<property visible="True" type="lines" id="zDeviceTemplates" >
+['Device', 'WebLogic Core', 'WebLogic JCA', 'WebLogic JMS', 'WebLogic JMS Destination', 'WebLogic JTA', 'WebLogic JTA Rollbacks', 'WebLogic JVM', 'WebLogic Thread Pool', 'WebLogic Timer Service', 'WebLogic User Lockouts']
+</property>
 <tomanycont id='rrdTemplates'>
 <object id='WebLogic Core' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
 <property type="string" id="targetPythonClass" mode="w" >
