@@ -18,5 +18,5 @@ class ZenPack(ZenPackBase):
         ('zWebLogicJmxManagementPort', 12347, 'int'),
         ('zWebLogicJmxManagementAuthenticate', False, 'boolean'),
         ('zWebLogicJmxManagementUsername', 'admin', 'string'),
-        ('zWebLogicJmxManagementPassword', 'admin', 'string'),
+        ('zWebLogicJmxManagementPassword', 'admin', 'password'),
         ]
