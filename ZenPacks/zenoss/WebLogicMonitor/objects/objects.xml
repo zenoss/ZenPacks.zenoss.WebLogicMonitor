@@ -16,7 +16,7 @@ Products.ZenModel.Device
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -33,8 +33,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:Name=myserver,Type=ServerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -47,7 +56,7 @@ RestartsTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='RestartsTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Return the total number of restarts for this server since the cluster was last activated.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -64,7 +73,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -81,8 +90,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:Name=myserver,Type=ServerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -95,7 +113,7 @@ OpenSocketsCurrentCount
 </property>
 <tomanycont id='datapoints'>
 <object id='OpenSocketsCurrentCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Return the current number sockets registered for socket muxing on this server.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -112,7 +130,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -129,8 +147,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:Name=myserver,Type=ServerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -143,7 +170,7 @@ SocketsOpenedTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='SocketsOpenedTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Return the total number of registrations for socket muxing on this sever.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -187,6 +214,9 @@ True
 </property>
 <tomanycont id='graphPoints'>
 <object id='OpenSocketsCurrentCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -265,8 +295,14 @@ False
 <property type="boolean" id="hasSummary" mode="w" >
 True
 </property>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <tomanycont id='graphPoints'>
 <object id='RestartsTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -306,7 +342,7 @@ Products.ZenModel.Device
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -323,8 +359,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=ConnectorService,Type=ConnectorServiceRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -337,7 +382,7 @@ ActiveRACount
 </property>
 <tomanycont id='datapoints'>
 <object id='ActiveRACount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Returns the number of resource adapters that are active.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -354,7 +399,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -371,8 +416,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=ConnectorService,Type=ConnectorServiceRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -385,7 +439,7 @@ ConnectionPoolCurrentCount
 </property>
 <tomanycont id='datapoints'>
 <object id='ConnectionPoolCurrentCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Returns the number of connection pools in all active RAs.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -402,7 +456,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -419,8 +473,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=ConnectorService,Type=ConnectorServiceRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -433,7 +496,7 @@ RACount
 </property>
 <tomanycont id='datapoints'>
 <object id='RACount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Returns an array of runtime information for all deployed and active resource adapters.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -450,7 +513,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -467,8 +530,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=ConnectorService,Type=ConnectorServiceRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -481,7 +553,7 @@ ConnectionPoolsTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='ConnectionPoolsTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Returns the number of resource adapter connection pools that have been created since server start up.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -520,8 +592,14 @@ False
 <property type="boolean" id="hasSummary" mode="w" >
 True
 </property>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <tomanycont id='graphPoints'>
 <object id='ConnectionPoolCurrentCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -608,6 +686,9 @@ True
 </property>
 <tomanycont id='graphPoints'>
 <object id='ActiveRACount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -676,7 +757,7 @@ Products.ZenModel.Device
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -693,8 +774,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JmsDispatcher,Type=WorkManagerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -707,7 +797,7 @@ CompletedRequests
 </property>
 <tomanycont id='datapoints'>
 <object id='CompletedRequests' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The number of requests that have been processed
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -724,7 +814,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -741,8 +831,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JmsDispatcher,Type=WorkManagerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -755,7 +854,7 @@ PendingRequests
 </property>
 <tomanycont id='datapoints'>
 <object id='PendingRequests' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The number of waiting requests in the queue.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -772,7 +871,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -789,8 +888,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JmsDispatcher,Type=WorkManagerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -803,7 +911,7 @@ StuckThreadCount
 </property>
 <tomanycont id='datapoints'>
 <object id='StuckThreadCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The number of thread that are considers stuck on the basis of any stuck thread constraints.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -820,7 +928,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -837,8 +945,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=myserver.jms,Type=JMSRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -851,7 +968,7 @@ ConnectionsTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='ConnectionsTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The total number of connections made to this WebLogic Server since the last reset.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -868,7 +985,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -885,8 +1002,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=myserver.jms,Type=JMSRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -899,7 +1025,7 @@ JMSServersTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='JMSServersTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The total number of JMS servers that were deployed on this WebLogic Server instance since this server was started.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -943,6 +1069,9 @@ True
 </property>
 <tomanycont id='graphPoints'>
 <object id='ConnectionsTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -1000,6 +1129,9 @@ True
 </property>
 <tomanycont id='graphPoints'>
 <object id='JMSServersTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -1052,8 +1184,14 @@ False
 <property type="boolean" id="hasSummary" mode="w" >
 True
 </property>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <tomanycont id='graphPoints'>
 <object id='CompletedRequests' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -1142,11 +1280,14 @@ AVERAGE
 </tomanycont>
 </object>
 <object id='WebLogic JMS Destination' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
-<property type="string" id="targetPythonClass" mode="w" >
-Products.ZenModel.Device
+<property id='zendoc' type='string'>
+Note: Make sure you update the object name in each data source to reflect your domain, server, and queue name.
 </property>
 <property type="text" id="description" mode="w" >
 Note: Make sure you update the object name in each data source to reflect your domain, server, and queue name.
+</property>
+<property type="string" id="targetPythonClass" mode="w" >
+Products.ZenModel.Device
 </property>
 <tomanycont id='datasources'>
 <object id='WLS JMS Destination Bytes Current' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
@@ -1154,7 +1295,7 @@ Note: Make sure you update the object name in each data source to reflect your d
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -1171,8 +1312,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -1185,7 +1335,7 @@ BytesCurrentCount
 </property>
 <tomanycont id='datapoints'>
 <object id='BytesCurrentCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The current number of bytes stored in the destination.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -1202,7 +1352,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -1219,8 +1369,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -1233,8 +1392,8 @@ BytesPageableCurrentCount
 </property>
 <tomanycont id='datapoints'>
 <object id='BytesPageableCurrentCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
- Return the total number of bytes in all the messages that are currently available to be paged out, but which have not yet been paged out.
+<property id='zendoc' type='string'>
+Return the total number of bytes in all the messages that are currently available to be paged out, but which have not yet been paged out.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 GAUGE
@@ -1250,7 +1409,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -1267,8 +1426,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -1281,7 +1449,7 @@ BytesPagedInTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='BytesPagedInTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Return the total number of bytes that were read from the paging directory since the JMS server was started.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -1298,7 +1466,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -1315,8 +1483,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -1329,7 +1506,7 @@ BytesPagedOutTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='BytesPagedOutTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Return the total number of bytes that were written to the paging directory since the JMS server was started.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -1346,7 +1523,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -1363,8 +1540,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -1377,7 +1563,7 @@ BytesPendingCount
 </property>
 <tomanycont id='datapoints'>
 <object id='BytesPendingCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The number of pending bytes stored in the destination.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -1394,7 +1580,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -1411,8 +1597,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -1425,7 +1620,7 @@ BytesReceivedCount
 </property>
 <tomanycont id='datapoints'>
 <object id='BytesReceivedCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The number of bytes received in this destination since the last reset.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -1442,7 +1637,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -1459,8 +1654,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -1473,7 +1677,7 @@ BytesThresholdTime
 </property>
 <tomanycont id='datapoints'>
 <object id='BytesThresholdTime' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The amount of time in the threshold condition since the last reset.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -1490,7 +1694,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -1507,8 +1711,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -1521,7 +1734,7 @@ DestinationsCurrentCount
 </property>
 <tomanycont id='datapoints'>
 <object id='DestinationsCurrentCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The current number of destinations for this JMS server.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -1538,7 +1751,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -1555,8 +1768,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -1569,7 +1791,7 @@ DestinationTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='DestinationTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The total number of destinations for this JMS server.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -1586,7 +1808,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -1603,8 +1825,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -1617,8 +1848,8 @@ MessagesCurrentCount
 </property>
 <tomanycont id='datapoints'>
 <object id='MessagesCurrentCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
- The current number of messages in the destination.
+<property id='zendoc' type='string'>
+The current number of messages in the destination.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 GAUGE
@@ -1634,7 +1865,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -1651,8 +1882,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -1665,7 +1905,7 @@ MessagesPageableCurrentCount
 </property>
 <tomanycont id='datapoints'>
 <object id='MessagesPageableCurrentCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Return the number of messages that are currently available for paging in this JMS server but have not yet been paged out.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -1682,7 +1922,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -1699,8 +1939,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -1713,7 +1962,7 @@ MessagesPagedInTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='MessagesPagedInTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Return the total number of messages that were read from the paging directory since the JMS server was started.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -1730,7 +1979,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -1747,8 +1996,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -1761,7 +2019,7 @@ MessagesPagedOutTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='MessagesPagedOutTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Return the total number of messages that were written to the paging directory since the JMS server was started.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -1778,7 +2036,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -1795,8 +2053,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -1809,7 +2076,7 @@ MessagesPendingCount
 </property>
 <tomanycont id='datapoints'>
 <object id='MessagesPendingCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The current number of messages pending (unacknowledged or uncommitted) stored on this JMS server.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -1826,7 +2093,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -1843,8 +2110,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -1857,7 +2133,7 @@ MessagesReceivedCount
 </property>
 <tomanycont id='datapoints'>
 <object id='MessagesReceivedCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The number of messages received on this destination since the last reset.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -1874,7 +2150,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -1891,8 +2167,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -1905,7 +2190,7 @@ MessagesThresholdTime
 </property>
 <tomanycont id='datapoints'>
 <object id='MessagesThresholdTime' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The amount of time in the threshold condition since the last reset.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -1944,8 +2229,14 @@ False
 <property type="boolean" id="hasSummary" mode="w" >
 True
 </property>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <tomanycont id='graphPoints'>
 <object id='MessagesCurrentCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -2119,6 +2410,9 @@ True
 </property>
 <tomanycont id='graphPoints'>
 <object id='BytesCurrentCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -2274,7 +2568,7 @@ Products.ZenModel.Device
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -2291,8 +2585,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -2305,7 +2608,7 @@ TransactionAbandonedTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='TransactionAbandonedTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The total number of transactions that were abandoned since the server was started.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -2322,7 +2625,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -2339,8 +2642,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -2353,7 +2665,7 @@ ActiveTransactionsTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='ActiveTransactionsTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The number of active transactions on the server.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -2370,7 +2682,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -2387,8 +2699,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -2401,7 +2722,7 @@ TransactionCommittedTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='TransactionCommittedTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The total number of transactions committed since the server was started.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -2418,7 +2739,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -2435,8 +2756,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -2449,7 +2779,7 @@ TransactionHeuristicsTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='TransactionHeuristicsTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The number of transactions that completed with a heuristic status since the server was started.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -2466,7 +2796,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -2483,8 +2813,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -2497,7 +2836,7 @@ TransactionRolledBackTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='TransactionRolledBackTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The number of transactions that were rolled back since the server was started.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -2514,7 +2853,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -2531,8 +2870,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -2545,7 +2893,7 @@ TransactionRolledBackTimeoutTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='TransactionRolledBackTimeoutTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The number of transactions that were rolled back due to a timeout expiration.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -2562,7 +2910,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -2579,8 +2927,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -2593,7 +2950,7 @@ SecondsActiveTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='SecondsActiveTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The total number of seconds that transactions were active for all committed transactions.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -2610,7 +2967,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -2627,8 +2984,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -2641,7 +3007,7 @@ TransactionTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='TransactionTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The total number of transactions processed. This total includes all committed, rolled back, and heuristic transaction completions since the server was started.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -2685,6 +3051,9 @@ True
 </property>
 <tomanycont id='graphPoints'>
 <object id='TransactionRolledBackTimeoutTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -2742,6 +3111,9 @@ True
 </property>
 <tomanycont id='graphPoints'>
 <object id='TransactionTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -2799,6 +3171,9 @@ True
 </property>
 <tomanycont id='graphPoints'>
 <object id='SecondsActiveTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -2851,6 +3226,9 @@ False
 <property type="boolean" id="hasSummary" mode="w" >
 True
 </property>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <tomanycont id='graphPoints'>
 <object id='ActiveTransactionsTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
 <property type="long" id="sequence" mode="w" >
@@ -2882,6 +3260,9 @@ AVERAGE
 </property>
 </object>
 <object id='TransactionAbandonedTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -3008,7 +3389,7 @@ Products.ZenModel.Device
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -3025,8 +3406,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -3039,7 +3429,7 @@ TransactionRolledBackAppTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='TransactionRolledBackAppTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The number of transactions that were rolled back due to an application error.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -3056,7 +3446,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -3073,8 +3463,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -3087,7 +3486,7 @@ TransactionRolledBackResourceTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='TransactionRolledBackResourceTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The number of transactions that were rolled back due to a resource error
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -3104,7 +3503,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -3121,8 +3520,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -3135,7 +3543,7 @@ TransactionRolledBackSystemTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='TransactionRolledBackSystemTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The number of transactions that were rolled back due to an internal system error.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -3174,8 +3582,14 @@ False
 <property type="boolean" id="hasSummary" mode="w" >
 True
 </property>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <tomanycont id='graphPoints'>
 <object id='TransactionRolledBackAppTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -3273,7 +3687,7 @@ Products.ZenModel.Device
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -3290,8 +3704,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 java.lang:type=GarbageCollector,name=Copy
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -3304,7 +3727,7 @@ CollectionCount
 </property>
 <tomanycont id='datapoints'>
 <object id='CollectionCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Returns the total number of collections that have occurred.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -3321,7 +3744,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -3338,8 +3761,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 java.lang:type=GarbageCollector,name=Copy
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -3352,7 +3784,7 @@ CollectionTime
 </property>
 <tomanycont id='datapoints'>
 <object id='CollectionTime' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Returns the approximate accumulated collection elapsed time in milliseconds.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -3369,7 +3801,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -3386,8 +3818,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 java.lang:type=Threading
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -3400,7 +3841,7 @@ DaemonThreadCount
 </property>
 <tomanycont id='datapoints'>
 <object id='DaemonThreadCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Returns the current number of live daemon threads.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -3417,7 +3858,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -3434,8 +3875,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 java.lang:type=OperatingSystem
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -3448,7 +3898,7 @@ FreePhysicalMemorySize
 </property>
 <tomanycont id='datapoints'>
 <object id='FreePhysicalMemorySize' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Returns the amount of free physical memory in bytes.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -3465,7 +3915,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -3482,8 +3932,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 java.lang:type=Memory
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -3496,7 +3955,7 @@ HeapMemoryUsage
 </property>
 <tomanycont id='datapoints'>
 <object id='used' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Returns the current memory usage of the heap that is used for object allocation.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -3513,7 +3972,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -3530,8 +3989,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 java.lang:type=GarbageCollector,name=MarkSweepCompact
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -3544,7 +4012,7 @@ CollectionCount
 </property>
 <tomanycont id='datapoints'>
 <object id='CollectionCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Returns the total number of collections that have occurred.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -3561,7 +4029,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -3578,8 +4046,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 java.lang:type=GarbageCollector,name=MarkSweepCompact
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -3592,7 +4069,7 @@ CollectionTime
 </property>
 <tomanycont id='datapoints'>
 <object id='CollectionTime' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Returns the approximate accumulated collection elapsed time in milliseconds.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -3609,7 +4086,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -3626,8 +4103,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 java.lang:type=OperatingSystem
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -3640,7 +4126,7 @@ OpenFileDescriptorCount
 </property>
 <tomanycont id='datapoints'>
 <object id='OpenFileDescriptorCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The number of open file descriptors the JVM is working
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -3657,7 +4143,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -3674,8 +4160,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 java.lang:type=Memory
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -3688,7 +4183,7 @@ NonHeapMemoryUsage
 </property>
 <tomanycont id='datapoints'>
 <object id='used' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Returns the current memory usage of non-heap memory that is used by the Java virtual machine
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -3724,8 +4219,14 @@ False
 <property type="boolean" id="hasSummary" mode="w" >
 True
 </property>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <tomanycont id='graphPoints'>
 <object id='CollectionCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -3812,6 +4313,9 @@ True
 </property>
 <tomanycont id='graphPoints'>
 <object id='DaemonThreadCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -3866,6 +4370,9 @@ True
 </property>
 <tomanycont id='graphPoints'>
 <object id='CollectionCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -3981,6 +4488,9 @@ AVERAGE
 </property>
 </object>
 <object id='heap memory' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -4067,6 +4577,9 @@ True
 </property>
 <tomanycont id='graphPoints'>
 <object id='OpenFileDescriptorCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -4106,7 +4619,7 @@ Products.ZenModel.Device
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -4123,8 +4636,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=ThreadPoolRuntime,Type=ThreadPoolRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -4137,7 +4659,7 @@ CompletedRequestCount
 </property>
 <tomanycont id='datapoints'>
 <object id='CompletedRequestCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The number of completed requests in the priority queue.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -4154,7 +4676,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -4171,8 +4693,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=ThreadPoolRuntime,Type=ThreadPoolRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -4185,7 +4716,7 @@ ExecuteThreadTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='ExecuteThreadTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The total number of threads in the pool.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -4202,7 +4733,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -4219,8 +4750,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=ThreadPoolRuntime,Type=ThreadPoolRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -4233,7 +4773,7 @@ ExecuteThreadIdleCount
 </property>
 <tomanycont id='datapoints'>
 <object id='ExecuteThreadIdleCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The number of idle threads in the pool.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -4250,7 +4790,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -4267,8 +4807,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=ThreadPoolRuntime,Type=ThreadPoolRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -4281,7 +4830,7 @@ QueueLength
 </property>
 <tomanycont id='datapoints'>
 <object id='QueueLength' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The number of pending requests in the priority queue.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -4298,7 +4847,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -4315,8 +4864,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=ThreadPoolRuntime,Type=ThreadPoolRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -4329,7 +4887,7 @@ Throughput
 </property>
 <tomanycont id='datapoints'>
 <object id='Throughput' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The mean number of requests completed per second
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -4402,6 +4960,9 @@ AVERAGE
 </property>
 </object>
 <object id='ExecuteThreadTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -4456,6 +5017,9 @@ True
 </property>
 <tomanycont id='graphPoints'>
 <object id='QueueLength' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -4505,8 +5069,14 @@ False
 <property type="boolean" id="hasSummary" mode="w" >
 True
 </property>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <tomanycont id='graphPoints'>
 <object id='Throughput' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -4561,6 +5131,9 @@ True
 </property>
 <tomanycont id='graphPoints'>
 <object id='CompletedRequestCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -4600,7 +5173,7 @@ Products.ZenModel.Device
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -4617,8 +5190,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=TimeEventGenerator,Type=TimeServiceRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -4631,7 +5213,7 @@ ExceptionCount
 </property>
 <tomanycont id='datapoints'>
 <object id='ExceptionCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The number of times an exception type has been thrown since enabling exception counting. If exception counting has not been enabled for the specified type, the result is unspecified.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -4648,7 +5230,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -4665,8 +5247,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=TimeEventGenerator,Type=TimeServiceRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -4679,7 +5270,7 @@ ExecutionCount
 </property>
 <tomanycont id='datapoints'>
 <object id='ExecutionCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Return the number of already executed statements.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -4696,7 +5287,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -4713,8 +5304,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=TimeEventGenerator,Type=TimeServiceRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -4727,7 +5327,7 @@ ExecutionsPerMinute
 </property>
 <tomanycont id='datapoints'>
 <object id='ExecutionsPerMinute' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Return the number of executed statements per minute.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -4744,7 +5344,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -4761,8 +5361,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=TimeEventGenerator,Type=TimeServiceRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -4775,7 +5384,7 @@ ScheduledTriggerCount
 </property>
 <tomanycont id='datapoints'>
 <object id='ScheduledTriggerCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The number of scheduled triggers.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -4816,6 +5425,9 @@ True
 </property>
 <tomanycont id='graphPoints'>
 <object id='ScheduledTriggerCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -4868,8 +5480,14 @@ False
 <property type="boolean" id="hasSummary" mode="w" >
 True
 </property>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <tomanycont id='graphPoints'>
 <object id='ExceptionCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -4929,11 +5547,14 @@ AVERAGE
 </tomanycont>
 </object>
 <object id='WebLogic User Lockouts' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
-<property type="string" id="targetPythonClass" mode="w" >
-Products.ZenModel.Device
+<property id='zendoc' type='string'>
+Make sure you update the realm name in the data sources
 </property>
 <property type="text" id="description" mode="w" >
 Make sure you update the realm name in the data sources
+</property>
+<property type="string" id="targetPythonClass" mode="w" >
+Products.ZenModel.Device
 </property>
 <tomanycont id='datasources'>
 <object id='WLS Invalid Login Attempts' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
@@ -4941,7 +5562,7 @@ Make sure you update the realm name in the data sources
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -4958,8 +5579,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=UserLockoutManager,Type=UserLockoutManagerRuntime,RealmRuntime=myrealm,ServerSecurityRuntime=myserver
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -4972,8 +5602,8 @@ InvalidLoginAttemptsTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='InvalidLoginAttemptsTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
-Returns the number of invalid logins attempted since this server has been started and lockouts have been enabled. In a cluster, this method returns the number of invalid logins attempted that have occured since the cluster has been started because all servers share login failure information. 
+<property id='zendoc' type='string'>
+Returns the number of invalid logins attempted since this server has been started and lockouts have been enabled. In a cluster, this method returns the number of invalid logins attempted that have occured since the cluster has been started because all servers share login failure information.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 COUNTER
@@ -4989,7 +5619,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -5006,8 +5636,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=UserLockoutManager,Type=UserLockoutManagerRuntime,RealmRuntime=myrealm,ServerSecurityRuntime=myserver
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -5020,8 +5659,8 @@ LoginAttemptsWhileLockedTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='LoginAttemptsWhileLockedTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
-Returns the number of invalid logins attempted since this server has been started and lockouts have been enabled. 
+<property id='zendoc' type='string'>
+Returns the number of invalid logins attempted since this server has been started and lockouts have been enabled.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 COUNTER
@@ -5037,7 +5676,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -5054,8 +5693,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=UserLockoutManager,Type=UserLockoutManagerRuntime,RealmRuntime=myrealm,ServerSecurityRuntime=myserver
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -5068,7 +5716,7 @@ LockedUsersCurrentCount
 </property>
 <tomanycont id='datapoints'>
 <object id='LockedUsersCurrentCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Returns the number of users that are currently locked out of this server.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -5085,7 +5733,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -5102,8 +5750,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=UserLockoutManager,Type=UserLockoutManagerRuntime,RealmRuntime=myrealm,ServerSecurityRuntime=myserver
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -5116,7 +5773,7 @@ UnlockedUsersTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='UnlockedUsersTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 Returns the number times users have been unlocked since this server has been started.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -5133,7 +5790,7 @@ True
 JMX
 </property>
 <property type="boolean" id="enabled" mode="w" >
-[True, True]
+True
 </property>
 <property type="string" id="component" mode="w" >
 JMX
@@ -5150,8 +5807,17 @@ JMX
 <property type="string" id="jmxPort" mode="w" >
 ${here/zWebLogicJmxManagementPort}
 </property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
 <property type="string" id="objectName" mode="w" >
 com.bea:ServerRuntime=myserver,Name=UserLockoutManager,Type=UserLockoutManagerRuntime,RealmRuntime=myrealm,ServerSecurityRuntime=myserver
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
 </property>
 <property type="string" id="username" mode="w" >
 ${here/zWebLogicJmxManagementUsername}
@@ -5164,7 +5830,7 @@ UserLockoutTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='UserLockoutTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property type="text" id="zendoc" mode="w" >
+<property id='zendoc' type='string'>
 The number of user lockouts that have occured since this server has been started. In a cluster, this method returns the number of user lockouts that have occured since the cluster has been started because all servers share login failure information.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -5203,8 +5869,14 @@ False
 <property type="boolean" id="hasSummary" mode="w" >
 True
 </property>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <tomanycont id='graphPoints'>
 <object id='LockedUsersCurrentCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -5291,6 +5963,9 @@ True
 </property>
 <tomanycont id='graphPoints'>
 <object id='InvalidLoginAttemptsTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -5377,6 +6052,9 @@ True
 </property>
 <tomanycont id='graphPoints'>
 <object id='UserLockoutTotalCount' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
