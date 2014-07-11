@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task
+  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="d60e293"><title>Configuring <ph conkeyref="names/platform"/></title><taskbody><context><p>All WebLogic services must have a device entry under the <filepath>/Devices/Server/WebLogic</filepath> device
+      class.</p><note>
+        <p>The <cmdname>zenjmx</cmdname> daemon must be configured and
+        running. See  for more information
+        about configuring the <cmdname>zenjmx</cmdname> daemon with the Sun
+        JRE tools.</p>
+      </note></context><steps-informal><ol>
+        <li>
+          <p>Navigate to the device class or device.</p>
+
+          <ul>
+            <li>
+              <p>If applying changes to a device class:</p>
+
+              <ol>
+                <li>
+                  <p>Select the class in the devices hierarchy.</p>
+                </li>
+
+                <li>
+                  <p>Click <b>Details</b>.</p>
+                </li>
+
+                <li>
+                  <p>Select Configuration Properties.</p>
+                </li>
+              </ol>
+            </li>
+
+            <li>
+              <p>If applying changes to a device:</p>
+
+              <ol>
+                <li>
+                  <p>Click the device in the device list.</p>
+                </li>
+
+                <li>
+                  <p>Select Configuration Properties.</p>
+                </li>
+              </ol>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <p>Edit the appropriate configuration properties for the device
+          or devices.</p>
+
+          <table>
+            <title>WebLogic Configuration Properties</title>
+
+            <tgroup cols="2">
+              <thead>
+                <row>
+                  <entry>Name</entry>
+
+                  <entry>Description</entry>
+                </row>
+              </thead>
+
+              <tbody>
+                <row>
+                  <entry><p>zWebLogicJmxManagementAuthenticate</p></entry>
+
+                  <entry><p>This configuration property is
+                  deprecated</p></entry>
+                </row>
+
+                <row>
+                  <entry><p>zWebLogicJmxManagementPassword</p></entry>
+
+                  <entry><p>JMX password</p></entry>
+                </row>
+
+                <row>
+                  <entry><p>zWebLogicJmxManagementPort</p></entry>
+
+                  <entry><p>The port number used to gather JMX
+                  information</p></entry>
+                </row>
+
+                <row>
+                  <entry><p>zWebLogicJmxManagementUsername</p></entry>
+
+                  <entry><p>JMX username for authentication</p></entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>
+        </li>
+
+        <li>
+          <p>Click <uicontrol outputclass="guibutton">Save</uicontrol> to save your changes.</p>
+
+          <p>You will now be able to start collecting the WebLogic server
+          metrics from this device.</p>
+        </li>
+
+        <li>
+          <p>Navigate to Graphs and you should see some placeholders for
+          performance graphs. After approximately 15 minutes you should see
+          the graphs start to become populated with information.</p>
+        </li>
+      </ol></steps-informal><result><note type="tip">
+        <p>The out-of-the-box WebLogic data source configuration has been
+        defined at the macro level, but can be configured to operate on a more
+        granular basis. For example, the Servlet Reload Count applies to all
+        servlets in all web applications but it could be narrowed to be
+        Servlet /submitOrder in web application "production server".</p>
+      </note></result></taskbody></task>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference
+  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="d60e132"><title>Data Pool (JDBC) metrics</title><refbody><section><ul>
+        <li>
+          <p>Leaked, Total, and Active connections</p>
+        </li>
+
+        <li>
+          <p>Number of requests waiting for a connection</p>
+        </li>
+
+        <li>
+          <p>Number of reconnect failures</p>
+        </li>
+      </ul></section></refbody></reference>

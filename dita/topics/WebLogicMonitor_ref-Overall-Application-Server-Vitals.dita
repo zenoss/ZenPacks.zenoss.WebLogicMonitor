@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference
+  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="d60e15"><title>Overall Application Server Vitals</title><refbody><section><ul>
+        <li>
+          <p>Number of total and active JMS connections and servers</p>
+        </li>
+
+        <li>
+          <p>Overall number of JTA transactions that are rolled back or
+          abandoned</p>
+        </li>
+
+        <li>
+          <p>JTA transactions rolled back due to system, application, or
+          resource issues</p>
+        </li>
+
+        <li>
+          <p>Number of JTA rollbacks that timeout</p>
+        </li>
+
+        <li>
+          <p>Active and committed JTA transaction count</p>
+        </li>
+
+        <li>
+          <p>Timer exceptions, executions, and scheduled triggers</p>
+        </li>
+
+        <li>
+          <p>User accounts that are locked and unlocked</p>
+        </li>
+
+        <li>
+          <p>Authentication failures against locked accounts and
+          non-existent accounts</p>
+        </li>
+
+        <li>
+          <p>Total sockets opened, and the current number of open
+          sockets</p>
+        </li>
+
+        <li>
+          <p>JVM Mark/Sweep and Copy garbage collector execution
+          counts</p>
+        </li>
+
+        <li>
+          <p>Number of JVM daemon threads</p>
+        </li>
+
+        <li>
+          <p>JVM Heap/Non-Heap used and committed memory</p>
+        </li>
+      </ul></section></refbody></reference>

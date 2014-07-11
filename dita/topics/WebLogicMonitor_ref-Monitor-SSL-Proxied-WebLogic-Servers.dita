@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference
+  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="d60e677"><title>Monitor SSL-Proxied WebLogic Servers</title><refbody><section><p>If you are monitoring a Web application running on WebLogic server,
+    you may find that the transaction always fails with a code 550 regardless
+    of how you configure the script. This could be a result of the WebLogic
+    server being behind an SSL proxy. When used in this configuration,
+    WebLogic requires that a <codeph outputclass="literal">WL-Proxy-SSL</codeph> header be added
+    to the request so that it knows to redirect to HTTPS instead of
+    HTTP.</p><p>To support this extra header in your <ph conkeyref="names/platform"/> Web transaction, you must make the following
+    changes on the script tab of your WebTx data source.</p><ul>
+      <li>
+        <p>Remove any content from the <uicontrol outputclass="guilabel">Initial URL</uicontrol>
+        field.</p>
+      </li>
+
+      <li>
+        <p>Add the following to the beginning of the
+        <uicontrol outputclass="guilabel">Script</uicontrol> box.</p>
+
+        <codeblock outputclass="programlisting">add_extra_header WL-Proxy-SSL true
+go</codeblock>
+      </li>
+    </ul></section></refbody></reference>

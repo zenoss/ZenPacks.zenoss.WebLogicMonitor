@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference
+  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="d60e253"><title>Configuring WebLogic to Allow JMX Queries</title><refbody><section><p>If you have not set up a domain and server then run the
+      <cmdname>startWLS.sh</cmdname> script located in the <filepath>${BEA_HOME}/wlserver_10.0/server/bin</filepath>
+      directory. If you don't have the Terminal I/O package installed you can
+      set the <keyword outputclass="envar">JAVA_OPTIONS</keyword> variable to the following
+      value:</p><codeblock outputclass="screen">JAVA_OPTIONS="-Dweblogic.management.allowPasswordEcho=true"
+export JAVA_OPTIONS</codeblock><p>Provide a user name and password to start WebLogic. Note that
+      WebLogic requires a password that is at least eight characters long.
+      Wait for WebLogic to generate a configuration and start up. Shut down
+      WebLogic and restart it with remote JMX access enabled.</p><p>To enable remote JMX access set the following variable:</p><codeblock outputclass="programlisting">JAVA_OPTIONS="-Dcom.sun.management.jmxremote.port=12347"
+JAVA_OPTIONS="${JAVA_OPTIONS} -Dcom.sun.management.jmxremote.authenticate=false"
+JAVA_OPTIONS="${JAVA_OPTIONS} -Dcom.sun.management.jmxremote.ssl=false"
+export JAVA_OPTIONS</codeblock><p>Then re-run the <cmdname>./startWLS.sh</cmdname> script.
+      <cmdname>JConsole</cmdname> can then communicate with the server on port
+      12347.</p></section></refbody></reference>
