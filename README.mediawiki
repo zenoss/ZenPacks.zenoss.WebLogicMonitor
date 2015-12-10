@@ -258,7 +258,10 @@ The out-of-the-box WebLogic data source configuration has been defined at the ma
 == Viewing Raw Data ==
 
 
-[[../../../../../../ZenPacks.zenoss.ZenJMX/ZenPacks/zenoss/ZenJMX/dox/topics/JConsole.html|../../../../../../ZenPacks.zenoss.ZenJMX/ZenPacks/zenoss/ZenJMX/dox/topics/JConsole.html]].
+To view raw data JConsole application from Java suite can be used.
+To connect to WebLogic Server JMX point JConsole to:
+
+	service:jmx:rmi:///jndi/rmi://SERVER_IP:JMX_PORT/jmxrmi
 
 
 == Monitor SSL-Proxied WebLogic Servers ==
