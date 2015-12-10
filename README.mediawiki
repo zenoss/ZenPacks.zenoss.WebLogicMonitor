@@ -1,0 +1,302 @@
+{{ZenPack
+|Summary=This ZenPack allows you to monitor an Oracle WebLogic Server.
+|ZenPack name=ZenPacks.zenoss.WebLogicMonitor
+|Documentation URL=http://www3.zenoss.com/l/3432/2013-02-28/33h4xx
+|Source URI=git://github.com/zenoss/ZenPacks.zenoss.WebLogicMonitor.git
+|Releases=
+|Devices=
+|Applications={{Application
+|Product Name=Oracle WebLogic Server
+}}
+|Integrations=
+|DataAudits=
+|Binaries=
+|Flavor=commercial
+}}
+
+The <span class="zenpack">ZenPacks.zenoss.WebLogicMonitor</span> ZenPack monitors Oracle WebLogic Server services.
+
+
+This ZenPack uses the JMX Remote API and and accesses MBeans deployed within WebLogic that contain performance information about the components that are being managed. This performance information includes pool sizes for data sources (JDBC), threads, connections (JCA), queues (JMS), servlets, JSPs, Enterprise Java Beans (EJB), timer queues.
+
+Throughput is also monitored when it is available. This metric is computed by WebLogic and is based on the number of messages moving through a queue at any given time. The throughput metric gives a good picture of the health of the messaging subsystem, which is commonly used throughout many enterprise applications. Stateless, Stateful, and Entity EJB performance metrics are monitored, as are message driven bean performance.
+
+Security realms are also monitored for potential denial of service attacks. This includes recording of authentication failures, broken out by valid accounts, invalid accounts, and accounts that are currently locked out. Application specific realms can be monitored by customizing the built in WebLogic default realm.
+
+
+== Overall Application Server Vitals ==
+
+
+* Number of total and active JMS connections and servers
+* Overall number of JTA transactions that are rolled back or abandoned
+* JTA transactions rolled back due to system, application, or resource issues
+* Number of JTA rollbacks that timeout
+* Active and committed JTA transaction count
+* Timer exceptions, executions, and scheduled triggers
+* User accounts that are locked and unlocked
+* Authentication failures against locked accounts and non-existent accounts
+* Total sockets opened, and the current number of open sockets
+* JVM Mark/Sweep and Copy garbage collector execution counts
+* Number of JVM daemon threads
+* JVM Heap/Non-Heap used and committed memory
+
+
+== Entity EJB, Message Driven Bean (MDB), and Session EJB Subsystem Metrics ==
+
+
+* Rollback and commit count on a per-EJB basis
+* Bean pool accesses, cache hits, and cache misses
+* Number of Beans in use, idle, and destroyed
+* Number of activations and passivations
+
+
+== Data Pool (JDBC) metrics ==
+
+
+* Leaked, Total, and Active connections
+* Number of requests waiting for a connection
+* Number of reconnect failures
+
+
+== Queue (JMS) Metrics ==
+
+
+* Bytes received, currently active, and pending in the queue
+* Number of queue consumers
+* Number of current, pending, and receives messages
+
+
+== Prerequisites ==
+
+
+WebLogic 9.0 or higher is required.
+
+
+{| class="wikitable"
+!width="50%"|Prerequisite
+!width="50%"|Restriction
+|-
+|Product
+|<span class="ph">Zenoss platform</span> 4.x, Zenoss 2.2 or higher
+|-
+|Required ZenPacks
+|ZenPacks.zenoss.ZenJMX,
+
+ZenPacks.zenoss.WebLogicMonitor
+|}
+
+
+== Configuring WebLogic to Allow JMX Queries ==
+
+
+If you have not set up a domain and server then run the <span class="keyword cmdname">startWLS.sh</span> script located in the <span class="ph filepath">${BEA_HOME}/wlserver_10.0/server/bin</span> directory. If you don't have the Terminal I/O package installed you can set the <span class="keyword envar">JAVA_OPTIONS</span> variable to the following value:
+
+<pre class="pre codeblock screen">JAVA_OPTIONS="-Dweblogic.management.allowPasswordEcho=true"
+export JAVA_OPTIONS</pre>
+Provide a user name and password to start WebLogic. Note that WebLogic requires a password that is at least eight characters long. Wait for WebLogic to generate a configuration and start up. Shut down WebLogic and restart it with remote JMX access enabled.
+
+To enable remote JMX access set the following variable:
+
+<pre class="pre codeblock programlisting">JAVA_OPTIONS="-Dcom.sun.management.jmxremote.port=12347"
+JAVA_OPTIONS="${JAVA_OPTIONS} -Dcom.sun.management.jmxremote.authenticate=false"
+JAVA_OPTIONS="${JAVA_OPTIONS} -Dcom.sun.management.jmxremote.ssl=false"
+export JAVA_OPTIONS</pre>
+Then re-run the <span class="keyword cmdname">./startWLS.sh</span> script. <span class="keyword cmdname">JConsole</span> can then communicate with the server on port 12347.
+
+
+== Configuring <span class="ph">Zenoss platform</span> ==
+
+
+All WebLogic services must have a device entry under the <span class="ph filepath">/Devices/Server/WebLogic</span> device class.
+
+
+<span class="notetitle">Note:</span>
+The <span class="keyword cmdname">zenjmx</span> daemon must be configured and running. See [[ZenPack:Java_2_Platform_Standard_Edition_(J2E)]] for more information about configuring the <span class="keyword cmdname">zenjmx</span> daemon with the Sun JRE tools.
+
+
+<ol>
+<li>Navigate to the device class or device.
+
+<ul>
+<li>If applying changes to a device class:
+
+<ol>
+<li>Select the class in the devices hierarchy.
+</li>
+<li>Click '''Details'''.
+</li>
+<li>Select Configuration Properties.
+</li></ol>
+</li>
+<li>If applying changes to a device:
+
+<ol>
+<li>Click the device in the device list.
+</li>
+<li>Select Configuration Properties.
+</li></ol>
+</li></ul>
+</li>
+<li>Edit the appropriate configuration properties for the device or devices.
+
+
+{| class="wikitable"
+|+ <span class="tablecap"><span class="tablecap">WebLogic Configuration Properties</span></span>
+!width="50%"|Name
+!width="50%"|Description
+|-
+|zWebLogicJmxManagementAuthenticate
+
+|This configuration property is deprecated
+
+|-
+|zWebLogicJmxManagementPassword
+
+|JMX password
+
+|-
+|zWebLogicJmxManagementPort
+
+|The port number used to gather JMX information
+
+|-
+|zWebLogicJmxManagementUsername
+
+|JMX username for authentication
+
+|}
+
+
+</li>
+<li>Click <span class="ph uicontrol guibutton">Save</span> to save your changes.
+
+You will now be able to start collecting the WebLogic server metrics from this device.
+</li>
+<li>Navigate to Graphs and you should see some placeholders for performance graphs. After approximately 15 minutes you should see the graphs start to become populated with information.
+</li></ol>
+
+
+<span class="tiptitle">Tip:</span>
+The out-of-the-box WebLogic data source configuration has been defined at the macro level, but can be configured to operate on a more granular basis. For example, the Servlet Reload Count applies to all servlets in all web applications but it could be narrowed to be Servlet /submitOrder in web application "production server".
+
+
+== Change the Amount of Data Collected and Graphed ==
+
+
+<ol>
+<li>Navigate to the device or device class.
+</li>
+<li>Select Monitoring Templates in the left panel.
+</li>
+<li>From the Action menu, select Bind Templates to display the <span class="ph uicontrol guilabel">Bind Templates</span> dialog.
+</li>
+<li>Move templates from the Available area to the Selected area, and then click '''Save'''.
+
+
+{| class="wikitable"
+|+ <span class="tablecap"><span class="tablecap">WebLogic Templates</span></span>
+!width="50%"|Name
+!width="50%"|Description
+|-
+|WebLogic Core
+
+|Core information about any WebLogic server, including memory usage, threads, and uptime.
+
+|-
+|WebLogic JCA
+
+|
+
+|-
+|WebLogic JMS
+
+|
+
+|-
+|WebLogic JMS Destination
+
+|
+
+|-
+|WebLogic JTA
+
+|
+
+|-
+|WebLogic JTA Rollbacks
+
+|
+
+|-
+|WebLogic JVM
+
+|
+
+|-
+|WebLogic Thread Pool
+
+|Threadpool metrics measured per Tomcat connector
+
+|-
+|WebLogic Timer Service
+
+|
+
+|-
+|WebLogic User Lockouts
+
+|
+
+|}
+
+
+</li>
+<li>Click the <span class="ph uicontrol guibutton">OK</span> button to save your changes.
+</li></ol>
+
+
+== Viewing Raw Data ==
+
+
+To view raw data JConsole application from Java suite can be used.
+To connect to WebLogic Server JMX point JConsole to:
+
+	service:jmx:rmi:///jndi/rmi://SERVER_IP:JMX_PORT/jmxrmi
+
+
+== Monitor SSL-Proxied WebLogic Servers ==
+
+
+If you are monitoring a Web application running on WebLogic server, you may find that the transaction always fails with a code 550 regardless of how you configure the script. This could be a result of the WebLogic server being behind an SSL proxy. When used in this configuration, WebLogic requires that a <samp class="ph codeph literal">WL-Proxy-SSL</samp> header be added to the request so that it knows to redirect to HTTPS instead of HTTP.
+
+To support this extra header in your <span class="ph">Zenoss platform</span> Web transaction, you must make the following changes on the script tab of your WebTx data source.
+
+<ul>
+<li>Remove any content from the <span class="ph uicontrol guilabel">Initial URL</span> field.
+</li>
+<li>Add the following to the beginning of the <span class="ph uicontrol guilabel">Script</span> box.
+
+<pre class="pre codeblock programlisting">add_extra_header WL-Proxy-SSL true
+go</pre></li></ul>
+
+
+== Daemons ==
+
+
+{| class="wikitable"
+!width="50%"|Type
+!width="50%"|Name
+|-
+|Performance Collector
+|zenjmx
+|}
+
+
+== Changes ==
+
+
+;2.2.3
+* Add tests
+
+
+{{ZenPackFooter}}
