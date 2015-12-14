@@ -40,7 +40,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:Name=myserver,Type=ServerRuntime
+com.bea:Name=AdminServer,Type=ServerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -97,7 +97,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:Name=myserver,Type=ServerRuntime
+com.bea:Name=AdminServer,Type=ServerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -154,7 +154,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:Name=myserver,Type=ServerRuntime
+com.bea:Name=AdminServer,Type=ServerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -366,7 +366,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=ConnectorService,Type=ConnectorServiceRuntime
+com.bea:ServerRuntime=AdminServer,Name=ConnectorService,Type=ConnectorServiceRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -423,7 +423,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=ConnectorService,Type=ConnectorServiceRuntime
+com.bea:ServerRuntime=AdminServer,Name=ConnectorService,Type=ConnectorServiceRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -480,7 +480,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=ConnectorService,Type=ConnectorServiceRuntime
+com.bea:ServerRuntime=AdminServer,Name=ConnectorService,Type=ConnectorServiceRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -537,7 +537,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=ConnectorService,Type=ConnectorServiceRuntime
+com.bea:ServerRuntime=AdminServer,Name=ConnectorService,Type=ConnectorServiceRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -781,7 +781,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JmsDispatcher,Type=WorkManagerRuntime
+com.bea:ServerRuntime=AdminServer,Name=JmsDispatcher,Type=WorkManagerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -838,7 +838,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JmsDispatcher,Type=WorkManagerRuntime
+com.bea:ServerRuntime=AdminServer,Name=JmsDispatcher,Type=WorkManagerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -895,7 +895,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JmsDispatcher,Type=WorkManagerRuntime
+com.bea:ServerRuntime=AdminServer,Name=JmsDispatcher,Type=WorkManagerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -952,7 +952,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=myserver.jms,Type=JMSRuntime
+com.bea:ServerRuntime=AdminServer,Name=AdminServer.jms,Type=JMSRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -1009,7 +1009,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=myserver.jms,Type=JMSRuntime
+com.bea:ServerRuntime=AdminServer,Name=AdminServer.jms,Type=JMSRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -1319,7 +1319,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+com.bea:ServerRuntime=AdminServer,Name=JMSServer-0,Type=JMSServerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -1376,7 +1376,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+com.bea:ServerRuntime=AdminServer,Name=JMSServer-0,Type=JMSServerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -1433,7 +1433,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+com.bea:ServerRuntime=AdminServer,Name=JMSServer-0,Type=JMSServerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -1490,7 +1490,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+com.bea:ServerRuntime=AdminServer,Name=JMSServer-0,Type=JMSServerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -1547,7 +1547,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+com.bea:ServerRuntime=AdminServer,Name=JMSServer-0,Type=JMSServerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -1604,7 +1604,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+com.bea:ServerRuntime=AdminServer,Name=JMSServer-0,Type=JMSServerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -1661,7 +1661,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+com.bea:ServerRuntime=AdminServer,Name=JMSServer-0,Type=JMSServerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -1718,7 +1718,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+com.bea:ServerRuntime=AdminServer,Name=JMSServer-0,Type=JMSServerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -1775,7 +1775,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+com.bea:ServerRuntime=AdminServer,Name=JMSServer-0,Type=JMSServerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -1832,7 +1832,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+com.bea:ServerRuntime=AdminServer,Name=JMSServer-0,Type=JMSServerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -1889,7 +1889,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+com.bea:ServerRuntime=AdminServer,Name=JMSServer-0,Type=JMSServerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -1946,7 +1946,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+com.bea:ServerRuntime=AdminServer,Name=JMSServer-0,Type=JMSServerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -2003,7 +2003,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+com.bea:ServerRuntime=AdminServer,Name=JMSServer-0,Type=JMSServerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -2060,7 +2060,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+com.bea:ServerRuntime=AdminServer,Name=JMSServer-0,Type=JMSServerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -2117,7 +2117,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+com.bea:ServerRuntime=AdminServer,Name=JMSServer-0,Type=JMSServerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -2174,7 +2174,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JMSServer-0,Type=JMSServerRuntime
+com.bea:ServerRuntime=AdminServer,Name=JMSServer-0,Type=JMSServerRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -2592,7 +2592,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+com.bea:ServerRuntime=AdminServer,Name=JTARuntime,Type=JTARuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -2649,7 +2649,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+com.bea:ServerRuntime=AdminServer,Name=JTARuntime,Type=JTARuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -2706,7 +2706,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+com.bea:ServerRuntime=AdminServer,Name=JTARuntime,Type=JTARuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -2763,7 +2763,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+com.bea:ServerRuntime=AdminServer,Name=JTARuntime,Type=JTARuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -2820,7 +2820,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+com.bea:ServerRuntime=AdminServer,Name=JTARuntime,Type=JTARuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -2877,7 +2877,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+com.bea:ServerRuntime=AdminServer,Name=JTARuntime,Type=JTARuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -2934,7 +2934,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+com.bea:ServerRuntime=AdminServer,Name=JTARuntime,Type=JTARuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -2991,7 +2991,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+com.bea:ServerRuntime=AdminServer,Name=JTARuntime,Type=JTARuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -3413,7 +3413,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+com.bea:ServerRuntime=AdminServer,Name=JTARuntime,Type=JTARuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -3470,7 +3470,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+com.bea:ServerRuntime=AdminServer,Name=JTARuntime,Type=JTARuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -3527,7 +3527,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=JTARuntime,Type=JTARuntime
+com.bea:ServerRuntime=AdminServer,Name=JTARuntime,Type=JTARuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -4643,7 +4643,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=ThreadPoolRuntime,Type=ThreadPoolRuntime
+com.bea:ServerRuntime=AdminServer,Name=ThreadPoolRuntime,Type=ThreadPoolRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -4700,7 +4700,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=ThreadPoolRuntime,Type=ThreadPoolRuntime
+com.bea:ServerRuntime=AdminServer,Name=ThreadPoolRuntime,Type=ThreadPoolRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -4757,7 +4757,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=ThreadPoolRuntime,Type=ThreadPoolRuntime
+com.bea:ServerRuntime=AdminServer,Name=ThreadPoolRuntime,Type=ThreadPoolRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -4814,7 +4814,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=ThreadPoolRuntime,Type=ThreadPoolRuntime
+com.bea:ServerRuntime=AdminServer,Name=ThreadPoolRuntime,Type=ThreadPoolRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -4871,7 +4871,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=ThreadPoolRuntime,Type=ThreadPoolRuntime
+com.bea:ServerRuntime=AdminServer,Name=ThreadPoolRuntime,Type=ThreadPoolRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -5197,7 +5197,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=TimeEventGenerator,Type=TimeServiceRuntime
+com.bea:ServerRuntime=AdminServer,Name=TimeEventGenerator,Type=TimeServiceRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -5254,7 +5254,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=TimeEventGenerator,Type=TimeServiceRuntime
+com.bea:ServerRuntime=AdminServer,Name=TimeEventGenerator,Type=TimeServiceRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -5311,7 +5311,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=TimeEventGenerator,Type=TimeServiceRuntime
+com.bea:ServerRuntime=AdminServer,Name=TimeEventGenerator,Type=TimeServiceRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -5368,7 +5368,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=TimeEventGenerator,Type=TimeServiceRuntime
+com.bea:ServerRuntime=AdminServer,Name=TimeEventGenerator,Type=TimeServiceRuntime
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -5586,7 +5586,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=UserLockoutManager,Type=UserLockoutManagerRuntime,RealmRuntime=myrealm,ServerSecurityRuntime=myserver
+com.bea:ServerRuntime=AdminServer,Name=UserLockoutManager,Type=UserLockoutManagerRuntime,RealmRuntime=myrealm,ServerSecurityRuntime=AdminServer
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -5643,7 +5643,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=UserLockoutManager,Type=UserLockoutManagerRuntime,RealmRuntime=myrealm,ServerSecurityRuntime=myserver
+com.bea:ServerRuntime=AdminServer,Name=UserLockoutManager,Type=UserLockoutManagerRuntime,RealmRuntime=myrealm,ServerSecurityRuntime=AdminServer
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -5700,7 +5700,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=UserLockoutManager,Type=UserLockoutManagerRuntime,RealmRuntime=myrealm,ServerSecurityRuntime=myserver
+com.bea:ServerRuntime=AdminServer,Name=UserLockoutManager,Type=UserLockoutManagerRuntime,RealmRuntime=myrealm,ServerSecurityRuntime=AdminServer
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -5757,7 +5757,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=UserLockoutManager,Type=UserLockoutManagerRuntime,RealmRuntime=myrealm,ServerSecurityRuntime=myserver
+com.bea:ServerRuntime=AdminServer,Name=UserLockoutManager,Type=UserLockoutManagerRuntime,RealmRuntime=myrealm,ServerSecurityRuntime=AdminServer
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}
@@ -5814,7 +5814,7 @@ RMI
 jmxrmi
 </property>
 <property type="string" id="objectName" mode="w" >
-com.bea:ServerRuntime=myserver,Name=UserLockoutManager,Type=UserLockoutManagerRuntime,RealmRuntime=myrealm,ServerSecurityRuntime=myserver
+com.bea:ServerRuntime=AdminServer,Name=UserLockoutManager,Type=UserLockoutManagerRuntime,RealmRuntime=myrealm,ServerSecurityRuntime=AdminServer
 </property>
 <property type="string" id="authenticate" mode="w" >
 ${here/zWebLogicJmxManagementAuthenticate}

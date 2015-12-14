@@ -69,7 +69,7 @@ Security realms are also monitored for potential denial of service attacks. This
 == Prerequisites ==
 
 
-WebLogic 9.0 or higher is required.
+WebLogic 10.0 or higher is required.
 
 
 {| class="wikitable"
@@ -102,6 +102,15 @@ JAVA_OPTIONS="${JAVA_OPTIONS} -Dcom.sun.management.jmxremote.authenticate=false"
 JAVA_OPTIONS="${JAVA_OPTIONS} -Dcom.sun.management.jmxremote.ssl=false"
 export JAVA_OPTIONS</pre>
 Then re-run the <span class="keyword cmdname">./startWLS.sh</span> script. <span class="keyword cmdname">JConsole</span> can then communicate with the server on port 12347.
+
+For newer versions it may be required to add one more Java option:
+
+<pre class="pre codeblock programlisting">JAVA_OPTIONS="${JAVA_OPTIONS} -Djavax.management.builder.initial=weblogic.management.jmx.mbeanserver.WLSMBeanServerBuilder"</pre>
+
+It may be convinient to store this variables in script itself.
+Example for Windows and WebLogic Server 12c ("startWebLogic.cmd" script):
+
+	set JAVA_OPTIONS=-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=12347 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djavax.management.builder.initial=weblogic.management.jmx.mbeanserver.WLSMBeanServerBuilder
 
 
 == Configuring <span class="ph">Zenoss platform</span> ==
@@ -258,6 +267,12 @@ The out-of-the-box WebLogic data source configuration has been defined at the ma
 == Viewing Raw Data ==
 
 
+WebLogic has a tool to check with monitoring data - "WebLogic ServerAdministration Console".
+By default it is available on:
+
+	http://WEB_LOGIC_HOST:7001/console/dashboard
+
+
 To view raw data JConsole application from Java suite can be used.
 To connect to WebLogic Server JMX point JConsole to:
 
@@ -280,22 +295,12 @@ To support this extra header in your <span class="ph">Zenoss platform</span> Web
 go</pre></li></ul>
 
 
-== Daemons ==
-
-
-{| class="wikitable"
-!width="50%"|Type
-!width="50%"|Name
-|-
-|Performance Collector
-|zenjmx
-|}
-
-
 == Changes ==
 
 
 ;2.2.3
+* Drop support of 9.0
+* Updated monitoring templates for newer versions of WebLogic Server
 * Add tests
 
 
