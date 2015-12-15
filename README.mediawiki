@@ -36,7 +36,7 @@ Security realms are also monitored for potential denial of service attacks. This
 * User accounts that are locked and unlocked
 * Authentication failures against locked accounts and non-existent accounts
 * Total sockets opened, and the current number of open sockets
-* JVM Mark/Sweep and Copy garbage collector execution counts
+* JVM Mark/Sweep and Scavenge garbage collector execution counts
 * Number of JVM daemon threads
 * JVM Heap/Non-Heap used and committed memory
 

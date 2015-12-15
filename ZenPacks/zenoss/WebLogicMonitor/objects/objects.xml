@@ -1787,7 +1787,7 @@ ${here/zWebLogicJmxManagementUsername}
 ${here/zWebLogicJmxManagementPassword}
 </property>
 <property type="string" id="attributeName" mode="w" >
-DestinationTotalCount
+DestinationsTotalCount
 </property>
 <tomanycont id='datapoints'>
 <object id='DestinationTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
