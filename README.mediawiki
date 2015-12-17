@@ -191,6 +191,7 @@ The out-of-the-box WebLogic data source configuration has been defined at the ma
 
 == Change the Amount of Data Collected and Graphed ==
 
+For performance reasons you may reduce the amount of metrics retrieved.
 
 <ol>
 <li>Navigate to the device or device class.
@@ -293,6 +294,13 @@ To support this extra header in your <span class="ph">Zenoss platform</span> Web
 
 <pre class="pre codeblock programlisting">add_extra_header WL-Proxy-SSL true
 go</pre></li></ul>
+
+
+== Limitations ==
+
+
+Depending on WebLogic server configuration it may happen that not all JMX datapoints are collected.
+This may occur when all monitoring templates are enabled. To deal with it turn off monitoring templates you not interested in as described in "Change the Amount of Data Collected and Graphed" section.
 
 
 == Changes ==
