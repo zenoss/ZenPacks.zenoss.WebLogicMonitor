@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task
+  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="d60e486"><title>Change the Amount of Data Collected and Graphed</title><taskbody><steps-informal><ol>
+      <li>
+        <p>Navigate to the device or device class.</p>
+      </li>
+
+      <li>
+        <p>Select Monitoring Templates in the left panel.</p>
+      </li>
+
+      <li>
+        <p>From the Action menu, select Bind Templates to display the
+        <uicontrol outputclass="guilabel">Bind Templates</uicontrol> dialog.</p>
+      </li>
+
+      <li>
+        <p>Move templates from the Available area to the Selected area, and
+        then click <b>Save</b>.</p>
+
+        <table>
+          <title>WebLogic Templates</title>
+          <tgroup cols="2">
+            <thead>
+              <row>
+                <entry>Name</entry>
+
+                <entry>Description</entry>
+              </row>
+            </thead>
+
+            <tbody>
+              <row>
+                <entry><p>WebLogic Core</p></entry>
+
+                <entry><p>Core information about any WebLogic server,
+                including memory usage, threads, and uptime.</p></entry>
+              </row>
+
+              <row>
+                <entry><p>WebLogic JCA</p></entry>
+
+                <entry><p/></entry>
+              </row>
+
+              <row>
+                <entry><p>WebLogic JMS</p></entry>
+
+                <entry><p/></entry>
+              </row>
+
+              <row>
+                <entry><p>WebLogic JMS Destination</p></entry>
+
+                <entry><p/></entry>
+              </row>
+
+              <row>
+                <entry><p>WebLogic JTA</p></entry>
+
+                <entry><p/></entry>
+              </row>
+
+              <row>
+                <entry><p>WebLogic JTA Rollbacks</p></entry>
+
+                <entry><p/></entry>
+              </row>
+
+              <row>
+                <entry><p>WebLogic JVM</p></entry>
+
+                <entry><p/></entry>
+              </row>
+
+              <row>
+                <entry><p>WebLogic Thread Pool</p></entry>
+
+                <entry><p>Threadpool metrics measured per Tomcat
+                connector</p></entry>
+              </row>
+
+              <row>
+                <entry><p>WebLogic Timer Service</p></entry>
+
+                <entry><p/></entry>
+              </row>
+
+              <row>
+                <entry><p>WebLogic User Lockouts</p></entry>
+
+                <entry><p/></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </li>
+
+      <li>
+        <p>Click the <uicontrol outputclass="guibutton">OK</uicontrol> button to save your
+        changes.</p>
+      </li>
+    </ol></steps-informal></taskbody></task>

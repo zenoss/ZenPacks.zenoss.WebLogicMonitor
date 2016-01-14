@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>(WebLogicMonitor) WebLogic Monitor</title>
+  <shortdesc>The <zenpack>ZenPacks.zenoss.WebLogicMonitor</zenpack> ZenPack monitors Oracle WebLogic Server services.</shortdesc>
+  <refbody>
+    <section>
+      <p>This ZenPack uses the JMX Remote API and and accesses MBeans
+        deployed within WebLogic that contain performance information about the
+        components that are being managed. This performance information includes
+        pool sizes for data sources (JDBC), threads, connections (JCA), queues
+        (JMS), servlets, JSPs, Enterprise Java Beans (EJB), timer queues.</p>
+      
+      <p>Throughput is also monitored when it is available. This metric is
+          computed by WebLogic and is based on the number of messages moving through
+          a queue at any given time. The throughput metric gives a good picture of
+          the health of the messaging subsystem, which is commonly used throughout
+          many enterprise applications. Stateless, Stateful, and Entity EJB
+          performance metrics are monitored, as are message driven bean
+          performance.</p>
+      
+      <p>Security realms are also monitored for potential denial of service
+            attacks. This includes recording of authentication failures, broken out by
+            valid accounts, invalid accounts, and accounts that are currently locked
+            out. Application specific realms can be monitored by customizing the built
+            in WebLogic default realm.</p>
+    </section>
+  </refbody>
+</reference>

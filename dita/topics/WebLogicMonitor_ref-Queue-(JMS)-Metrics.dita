@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference
+  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="d60e159"><title>Queue (JMS) Metrics</title><refbody><section><ul>
+        <li>
+          <p>Bytes received, currently active, and pending in the
+          queue</p>
+        </li>
+
+        <li>
+          <p>Number of queue consumers</p>
+        </li>
+
+        <li>
+          <p>Number of current, pending, and receives messages</p>
+        </li>
+      </ul></section></refbody></reference>

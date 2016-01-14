@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference
+  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="d60e666"><title>Viewing Raw Data</title><refbody><section>
+  <p>For more information
+  about investigating raw data returned from Oracle WebLogic Server, see
+    <xref keyref="reference-ZenPacks.zenoss.ZenJMX-JConsole"/>.</p>
+</section></refbody></reference>

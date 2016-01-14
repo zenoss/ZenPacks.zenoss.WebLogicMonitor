@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+   <title>WebLogicMonitor</title>
+   <topicref href="topics/WebLogicMonitor.dita">
+      <topicref href="topics/WebLogicMonitor_ref-Overall-Application-Server-Vitals.dita"/>
+      <topicref href="topics/WebLogicMonitor_ref-Entity-EJB,-Message-Driven-Bean-(MDB),-and-Session-EJB-Subsystem-Metrics.dita"/>
+      <topicref href="topics/WebLogicMonitor_ref-Data-Pool-(JDBC)-metrics.dita"/>
+      <topicref href="topics/WebLogicMonitor_ref-Queue-(JMS)-Metrics.dita"/>
+      <topicref href="topics/WebLogicMonitor_ref-Prerequisites.dita"/>
+      <topicref href="topics/WebLogicMonitor_ref-Configuring-WebLogic-to-Allow-JMX-Queries.dita"/>
+      <topicref href="topics/WebLogicMonitor_task-Configuring.dita"/>      
+      <topicref href="topics/WebLogicMonitor_task-Change-the-Amount-of-Data-Collected-and-Graphed.dita"/>
+      <topicref href="topics/WebLogicMonitor_ref-Viewing-Raw-Data.dita"/>
+      <topicref href="topics/WebLogicMonitor_ref-Monitor-SSL-Proxied-WebLogic-Servers.dita"/>
+      <topicref href="topics/WebLogicMonitor_ref-Daemons.dita"/>
+   </topicref>
+</map>
