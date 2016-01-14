@@ -72,20 +72,6 @@ Security realms are also monitored for potential denial of service attacks. This
 WebLogic 10.0 or higher is required.
 
 
-{| class="wikitable"
-!width="50%"|Prerequisite
-!width="50%"|Restriction
-|-
-|Product
-|<span class="ph">Zenoss platform</span> 4.x, Zenoss 2.2 or higher
-|-
-|Required ZenPacks
-|ZenPacks.zenoss.ZenJMX,
-
-ZenPacks.zenoss.WebLogicMonitor
-|}
-
-
 == Configuring WebLogic to Allow JMX Queries ==
 
 
@@ -307,9 +293,9 @@ This may occur when all monitoring templates are enabled. To deal with it turn o
 
 
 ;2.2.3
-* Drop support of 9.0
+* Droped support of 9.0
 * Updated monitoring templates for newer versions of WebLogic Server
-* Add tests
+* Added tests
 
 
 {{ZenPackFooter}}

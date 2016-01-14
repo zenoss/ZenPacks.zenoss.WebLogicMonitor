@@ -2,12 +2,12 @@
 # These variables are overwritten by Zenoss when the ZenPack is exported
 # or saved.  Do not modify them directly here.
 NAME = 'ZenPacks.zenoss.WebLogicMonitor'
-VERSION = '2.2.3dev'
+VERSION = '2.2.3'
 AUTHOR = 'Zenoss'
 LICENSE = ''
 NAMESPACE_PACKAGES = ['ZenPacks', 'ZenPacks.zenoss']
 INSTALL_REQUIRES = ['ZenPacks.zenoss.ZenJMX']
-COMPAT_ZENOSS_VERS = '>= 2.2'
+COMPAT_ZENOSS_VERS = '>= 4.2'
 PREV_ZENPACK_NAME = 'WebLogicMonitor'
 # STOP_REPLACEMENTS
 ################################
