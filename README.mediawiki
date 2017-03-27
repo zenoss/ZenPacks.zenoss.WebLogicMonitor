@@ -83,21 +83,29 @@ Provide a user name and password to start WebLogic. Note that WebLogic requires 
 
 To enable remote JMX access set the following variable:
 
-<pre class="pre codeblock programlisting">JAVA_OPTIONS="-Dcom.sun.management.jmxremote.port=12347"
+<pre class="pre codeblock programlisting">
+JAVA_OPTIONS="-Dcom.sun.management.jmxremote.port=12347"
 JAVA_OPTIONS="${JAVA_OPTIONS} -Dcom.sun.management.jmxremote.authenticate=false"
 JAVA_OPTIONS="${JAVA_OPTIONS} -Dcom.sun.management.jmxremote.ssl=false"
-export JAVA_OPTIONS</pre>
+export JAVA_OPTIONS
+</pre>
+
 Then re-run the <span class="keyword cmdname">./startWLS.sh</span> script. <span class="keyword cmdname">JConsole</span> can then communicate with the server on port 12347.
 
 For newer versions it may be required to add one more Java option:
 
-<pre class="pre codeblock programlisting">JAVA_OPTIONS="${JAVA_OPTIONS} -Djavax.management.builder.initial=weblogic.management.jmx.mbeanserver.WLSMBeanServerBuilder"</pre>
+<pre class="pre codeblock programlisting">
+JAVA_OPTIONS="${JAVA_OPTIONS} -Djavax.management.builder.initial=weblogic.management.jmx.mbeanserver.WLSMBeanServerBuilder"
+</pre>
 
 It may be convinient to store this variables in script itself.
-Example for Windows and WebLogic Server 12c ("startWebLogic.cmd" script):
+Example for Windows and WebLogic Server 11g/12c ("startWebLogic.cmd" script):
 
-	set JAVA_OPTIONS=-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=12347 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djavax.management.builder.initial=weblogic.management.jmx.mbeanserver.WLSMBeanServerBuilder
+<pre class="pre codeblock programlisting">
+set JAVA_OPTIONS=%JAVA_OPTIONS% -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=12347 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djavax.management.builder.initial=weblogic.management.jmx.mbeanserver.WLSMBeanServerBuilder -Dcom.sun.management.jmxremote.local.only=false -Djava.rmi.server.hostname=127.0.0.1
+</pre>
 
+Port 12347 and 127.0.0.1 IP address used as an example and should be set to actual values.
 
 == Configuring <span class="ph">Zenoss platform</span> ==
 
@@ -281,6 +289,16 @@ To support this extra header in your <span class="ph">Zenoss platform</span> Web
 <pre class="pre codeblock programlisting">add_extra_header WL-Proxy-SSL true
 go</pre></li></ul>
 
+== Monitor JDBC Datasources and JDBC Connection Pools ==
+
+''WebLogic JDBC'' monitoring template is an example of configuration. It should be copied and modified to use with your JDBC datasources. In this template ''testds'' datasource name should be changed to actual datasource name.
+
+To add additional JDBC metrics one may use ''http://WEB_LOGIC_HOST:7001/console/dashboard'' monitoring dashboard and set filters:
+ * Servers: WEB_LOGIC_SERVER
+ * Types: JDBCDataSource / JDBCConnectionPool
+ * Instances: JDBC_DATASOURCE_NAME
+
+Metrics list will be populated with available options. These may be set as datasource params in ''WebLogic JDBC'' monitoring template.
 
 == Limitations ==
 
@@ -291,6 +309,8 @@ This may occur when all monitoring templates are enabled. To deal with it turn o
 
 == Changes ==
 
+;2.2.4
+* Added JDBC monitoring template
 
 ;2.2.3
 * Droped support of 9.0
