@@ -6263,7 +6263,7 @@ True
 <object id="WebLogic JDBC" module="Products.ZenModel.GraphDefinition" class="GraphDefinition">
 <property type="int" id="height" mode="w">100</property>
 <property type="int" id="width" mode="w">500</property>
-<property type="string" id="units" mode="w">count</property>
+<property type="string" id="units" mode="w">connections</property>
 <property type="boolean" id="log" mode="w">False</property>
 <property type="boolean" id="base" mode="w">False</property>
 <property type="int" id="miny" mode="w">0</property>
@@ -6278,7 +6278,7 @@ True
 <property type="long" id="lineWidth" mode="w">1</property>
 <property type="boolean" id="stacked" mode="w">False</property>
 <property type="string" id="format" mode="w">%5.2lf%s</property>
-<property type="string" id="legend" mode="w">${graphPoint/id}</property>
+<property type="string" id="legend" mode="w">Active</property>
 <property type="long" id="limit" mode="w">-1</property>
 <property type="string" id="dpName" mode="w">Active Connections Current Count_ActiveConnectionsCurrentCount</property>
 <property type="string" id="cFunc" mode="w">AVERAGE</property>
@@ -6289,7 +6289,7 @@ True
 <property type="long" id="lineWidth" mode="w">1</property>
 <property type="boolean" id="stacked" mode="w">False</property>
 <property type="string" id="format" mode="w">%5.2lf%s</property>
-<property type="string" id="legend" mode="w">${graphPoint/id}</property>
+<property type="string" id="legend" mode="w">Total</property>
 <property type="long" id="limit" mode="w">-1</property>
 <property type="string" id="dpName" mode="w">Connections Total Count_ConnectionsTotalCount</property>
 <property type="string" id="cFunc" mode="w">AVERAGE</property>
@@ -6300,7 +6300,7 @@ True
 <property type="long" id="lineWidth" mode="w">1</property>
 <property type="boolean" id="stacked" mode="w">False</property>
 <property type="string" id="format" mode="w">%5.2lf%s</property>
-<property type="string" id="legend" mode="w">${graphPoint/id}</property>
+<property type="string" id="legend" mode="w">Leaked</property>
 <property type="long" id="limit" mode="w">-1</property>
 <property type="string" id="dpName" mode="w">Leaked Connection Count_LeakedConnectionCount</property>
 <property type="string" id="cFunc" mode="w">AVERAGE</property>
@@ -6311,7 +6311,7 @@ True
 <property type="long" id="lineWidth" mode="w">1</property>
 <property type="boolean" id="stacked" mode="w">False</property>
 <property type="string" id="format" mode="w">%5.2lf%s</property>
-<property type="string" id="legend" mode="w">${graphPoint/id}</property>
+<property type="string" id="legend" mode="w">Waiting For</property>
 <property type="long" id="limit" mode="w">-1</property>
 <property type="string" id="dpName" mode="w">Waiting For Connection Current Count_WaitingForConnectionCurrentCount</property>
 <property type="string" id="cFunc" mode="w">AVERAGE</property>
@@ -6322,7 +6322,7 @@ True
 <property type="long" id="lineWidth" mode="w">1</property>
 <property type="boolean" id="stacked" mode="w">False</property>
 <property type="string" id="format" mode="w">%5.2lf%s</property>
-<property type="string" id="legend" mode="w">${graphPoint/id}</property>
+<property type="string" id="legend" mode="w">Failures</property>
 <property type="long" id="limit" mode="w">-1</property>
 <property type="string" id="dpName" mode="w">Failures To Reconnect Count_FailuresToReconnectCount</property>
 <property type="string" id="cFunc" mode="w">AVERAGE</property>
