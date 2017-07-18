@@ -309,8 +309,9 @@ This may occur when all monitoring templates are enabled. To deal with it turn o
 
 == Changes ==
 
-;2.2.4
+;2.3.0
 * Added JDBC monitoring template
+* Updated documentation for newer versions of WebLogic Server
 
 ;2.2.3
 * Droped support of 9.0
