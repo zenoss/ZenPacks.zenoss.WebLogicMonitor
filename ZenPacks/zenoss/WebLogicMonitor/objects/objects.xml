@@ -6022,7 +6022,7 @@ ActiveConnectionsCurrentCount
 Return the current number of connections to JDBC datasource.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
-COUNTER
+GAUGE
 </property>
 <property type="boolean" id="isrow" mode="w" >
 True
@@ -6079,7 +6079,7 @@ ConnectionsTotalCount
 Return the total number of connections to JDBC datasource.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
-COUNTER
+GAUGE
 </property>
 <property type="boolean" id="isrow" mode="w" >
 True
@@ -6136,7 +6136,7 @@ LeakedConnectionCount
 Return the number of leaked connections to JDBC datasource.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
-COUNTER
+GAUGE
 </property>
 <property type="boolean" id="isrow" mode="w" >
 True
@@ -6193,7 +6193,7 @@ WaitingForConnectionCurrentCount
 Return the number of requests waiting for connection to JDBC datasource.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
-COUNTER
+GAUGE
 </property>
 <property type="boolean" id="isrow" mode="w" >
 True
@@ -6250,7 +6250,7 @@ FailuresToReconnectCount
 Return the number of requests waiting for connection to JDBC datasource.
 </property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
-COUNTER
+GAUGE
 </property>
 <property type="boolean" id="isrow" mode="w" >
 True
