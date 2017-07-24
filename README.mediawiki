@@ -75,28 +75,21 @@ WebLogic 10.0 or higher is required.
 == Configuring WebLogic to Allow JMX Queries ==
 
 
-If you have not set up a domain and server then run the <span class="keyword cmdname">startWLS.sh</span> script located in the <span class="ph filepath">${BEA_HOME}/wlserver_10.0/server/bin</span> directory. If you don't have the Terminal I/O package installed you can set the <span class="keyword envar">JAVA_OPTIONS</span> variable to the following value:
+To enable remote JMX access set the following variables in "startWebLogic.sh" (Linux) or "startWebLogic.cmd" (Windows):
 
-<pre class="pre codeblock screen">JAVA_OPTIONS="-Dweblogic.management.allowPasswordEcho=true"
-export JAVA_OPTIONS</pre>
-Provide a user name and password to start WebLogic. Note that WebLogic requires a password that is at least eight characters long. Wait for WebLogic to generate a configuration and start up. Shut down WebLogic and restart it with remote JMX access enabled.
+<pre class="pre codeblock programlisting">
+	set JAVA_OPTIONS=%JAVA_OPTIONS% -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=12347 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djavax.management.builder.initial=weblogic.management.jmx.mbeanserver.WLSMBeanServerBuilder
+</pre>
 
-To enable remote JMX access set the following variable:
+This file normally located in "bin" directory under your domain.
+For example on Windows with domain "base_domain" this may be "C:\Oracle\Middleware\user_projects\domains\base_domain\bin\startWebLogic.cmd"
 
-<pre class="pre codeblock programlisting">JAVA_OPTIONS="-Dcom.sun.management.jmxremote.port=12347"
-JAVA_OPTIONS="${JAVA_OPTIONS} -Dcom.sun.management.jmxremote.authenticate=false"
-JAVA_OPTIONS="${JAVA_OPTIONS} -Dcom.sun.management.jmxremote.ssl=false"
-export JAVA_OPTIONS</pre>
-Then re-run the <span class="keyword cmdname">./startWLS.sh</span> script. <span class="keyword cmdname">JConsole</span> can then communicate with the server on port 12347.
+Open it with text editor and search for "echo WLS Start Mode=%WLS_DISPLAY_MODE%" line.
+Put JAVA options above after this line. Then save file and restart WebLogic.
+Now you have your 12347 port binded to JMX queries from Zenoss (zJmxManagementPort property).
+This port number may be changed due to your needs.
 
-For newer versions it may be required to add one more Java option:
-
-<pre class="pre codeblock programlisting">JAVA_OPTIONS="${JAVA_OPTIONS} -Djavax.management.builder.initial=weblogic.management.jmx.mbeanserver.WLSMBeanServerBuilder"</pre>
-
-It may be convinient to store this variables in script itself.
-Example for Windows and WebLogic Server 12c ("startWebLogic.cmd" script):
-
-	set JAVA_OPTIONS=-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=12347 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djavax.management.builder.initial=weblogic.management.jmx.mbeanserver.WLSMBeanServerBuilder
+Depending on your OS security, it may be required to add appropriate rule to firewall.
 
 
 == Configuring <span class="ph">Zenoss platform</span> ==
@@ -281,6 +274,20 @@ To support this extra header in your <span class="ph">Zenoss platform</span> Web
 <pre class="pre codeblock programlisting">add_extra_header WL-Proxy-SSL true
 go</pre></li></ul>
 
+== Monitor JDBC Datasources and JDBC Connection Pools ==
+
+By default this template not binded to WebLogic device.
+
+''WebLogic JDBC'' monitoring template is an example of configuration. It should be copied and modified to use with your JDBC datasources. In this template ''testds'' datasource name should be changed to actual datasource name.
+
+To add additional JDBC metrics one may use ''http://WEB_LOGIC_HOST:7001/console/dashboard'' monitoring dashboard and set filters:
+ * Servers: WEB_LOGIC_SERVER
+ * Types: JDBCDataSource / JDBCConnectionPool
+ * Instances: JDBC_DATASOURCE_NAME
+
+Metrics list will be populated with available options. These may be set as datasource params in ''WebLogic JDBC'' monitoring template.
+
+To test these metrics on WebLogic dashboard new view (graph) may be created. Then it is required to click "Run" button at left top corner to run monitoring.
 
 == Limitations ==
 
@@ -291,6 +298,9 @@ This may occur when all monitoring templates are enabled. To deal with it turn o
 
 == Changes ==
 
+;2.3.0
+* Added JDBC monitoring template
+* Updated documentation for newer versions of WebLogic Server
 
 ;2.2.3
 * Droped support of 9.0

@@ -5967,6 +5967,370 @@ AVERAGE
 </object>
 </tomanycont>
 </object>
+
+<object id='WebLogic JDBC' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<property type="string" id="targetPythonClass" mode="w" >
+Products.ZenModel.Device
+</property>
+<tomanycont id='datasources'>
+<object id='Active Connections Current Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Status/JMX
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=AdminServer,Name=testds,Type=JDBCDataSourceRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+ActiveConnectionsCurrentCount
+</property>
+<tomanycont id='datapoints'>
+<object id='ActiveConnectionsCurrentCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property id='zendoc' type='string'>
+Return the current number of connections to JDBC datasource.
+</property>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='Connections Total Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Status/JMX
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=AdminServer,Name=testds,Type=JDBCDataSourceRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+ConnectionsTotalCount
+</property>
+<tomanycont id='datapoints'>
+<object id='ConnectionsTotalCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property id='zendoc' type='string'>
+Return the total number of connections to JDBC datasource.
+</property>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='Leaked Connection Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Status/JMX
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=AdminServer,Name=testds,Type=JDBCDataSourceRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+LeakedConnectionCount
+</property>
+<tomanycont id='datapoints'>
+<object id='LeakedConnectionCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property id='zendoc' type='string'>
+Return the number of leaked connections to JDBC datasource.
+</property>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='Waiting For Connection Current Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Status/JMX
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=AdminServer,Name=testds,Type=JDBCDataSourceRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+WaitingForConnectionCurrentCount
+</property>
+<tomanycont id='datapoints'>
+<object id='WaitingForConnectionCurrentCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property id='zendoc' type='string'>
+Return the number of requests waiting for connection to JDBC datasource.
+</property>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='Failures To Reconnect Count' module='ZenPacks.zenoss.ZenJMX.datasources.JMXDataSource' class='JMXDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+JMX
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="component" mode="w" >
+JMX
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Status/JMX
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="jmxPort" mode="w" >
+${here/zWebLogicJmxManagementPort}
+</property>
+<property type="string" id="jmxProtocol" mode="w" >
+RMI
+</property>
+<property type="string" id="rmiContext" mode="w" >
+jmxrmi
+</property>
+<property type="string" id="objectName" mode="w" >
+com.bea:ServerRuntime=AdminServer,Name=testds,Type=JDBCDataSourceRuntime
+</property>
+<property type="string" id="authenticate" mode="w" >
+${here/zWebLogicJmxManagementAuthenticate}
+</property>
+<property type="string" id="username" mode="w" >
+${here/zWebLogicJmxManagementUsername}
+</property>
+<property type="string" id="password" mode="w" >
+${here/zWebLogicJmxManagementPassword}
+</property>
+<property type="string" id="attributeName" mode="w" >
+FailuresToReconnectCount
+</property>
+<tomanycont id='datapoints'>
+<object id='FailuresToReconnectCount' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property id='zendoc' type='string'>
+Return the number of requests waiting for connection to JDBC datasource.
+</property>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+<tomanycont id="graphDefs">
+<object id="WebLogic JDBC" module="Products.ZenModel.GraphDefinition" class="GraphDefinition">
+<property type="int" id="height" mode="w">100</property>
+<property type="int" id="width" mode="w">500</property>
+<property type="string" id="units" mode="w">connections</property>
+<property type="boolean" id="log" mode="w">False</property>
+<property type="boolean" id="base" mode="w">False</property>
+<property type="int" id="miny" mode="w">0</property>
+<property type="int" id="maxy" mode="w">-1</property>
+<property type="boolean" id="hasSummary" mode="w">True</property>
+<property type="long" id="sequence" mode="w">0</property>
+<tomanycont id="graphPoints">
+
+<object id="ActiveConnectionsCurrentCount" module="Products.ZenModel.DataPointGraphPoint" class="DataPointGraphPoint">
+<property type="long" id="sequence" mode="w">0</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w">LINE</property>
+<property type="long" id="lineWidth" mode="w">1</property>
+<property type="boolean" id="stacked" mode="w">False</property>
+<property type="string" id="format" mode="w">%5.2lf%s</property>
+<property type="string" id="legend" mode="w">Active</property>
+<property type="long" id="limit" mode="w">-1</property>
+<property type="string" id="dpName" mode="w">Active Connections Current Count_ActiveConnectionsCurrentCount</property>
+<property type="string" id="cFunc" mode="w">AVERAGE</property>
+</object>
+<object id="ConnectionsTotalCount" module="Products.ZenModel.DataPointGraphPoint" class="DataPointGraphPoint">
+<property type="long" id="sequence" mode="w">0</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w">LINE</property>
+<property type="long" id="lineWidth" mode="w">1</property>
+<property type="boolean" id="stacked" mode="w">False</property>
+<property type="string" id="format" mode="w">%5.2lf%s</property>
+<property type="string" id="legend" mode="w">Total</property>
+<property type="long" id="limit" mode="w">-1</property>
+<property type="string" id="dpName" mode="w">Connections Total Count_ConnectionsTotalCount</property>
+<property type="string" id="cFunc" mode="w">AVERAGE</property>
+</object>
+<object id="LeakedConnectionCount" module="Products.ZenModel.DataPointGraphPoint" class="DataPointGraphPoint">
+<property type="long" id="sequence" mode="w">0</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w">LINE</property>
+<property type="long" id="lineWidth" mode="w">1</property>
+<property type="boolean" id="stacked" mode="w">False</property>
+<property type="string" id="format" mode="w">%5.2lf%s</property>
+<property type="string" id="legend" mode="w">Leaked</property>
+<property type="long" id="limit" mode="w">-1</property>
+<property type="string" id="dpName" mode="w">Leaked Connection Count_LeakedConnectionCount</property>
+<property type="string" id="cFunc" mode="w">AVERAGE</property>
+</object>
+<object id="WaitingForConnectionCurrentCount" module="Products.ZenModel.DataPointGraphPoint" class="DataPointGraphPoint">
+<property type="long" id="sequence" mode="w">0</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w">LINE</property>
+<property type="long" id="lineWidth" mode="w">1</property>
+<property type="boolean" id="stacked" mode="w">False</property>
+<property type="string" id="format" mode="w">%5.2lf%s</property>
+<property type="string" id="legend" mode="w">Waiting For</property>
+<property type="long" id="limit" mode="w">-1</property>
+<property type="string" id="dpName" mode="w">Waiting For Connection Current Count_WaitingForConnectionCurrentCount</property>
+<property type="string" id="cFunc" mode="w">AVERAGE</property>
+</object>
+<object id="FailuresToReconnectCount" module="Products.ZenModel.DataPointGraphPoint" class="DataPointGraphPoint">
+<property type="long" id="sequence" mode="w">0</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w">LINE</property>
+<property type="long" id="lineWidth" mode="w">1</property>
+<property type="boolean" id="stacked" mode="w">False</property>
+<property type="string" id="format" mode="w">%5.2lf%s</property>
+<property type="string" id="legend" mode="w">Failures</property>
+<property type="long" id="limit" mode="w">-1</property>
+<property type="string" id="dpName" mode="w">Failures To Reconnect Count_FailuresToReconnectCount</property>
+<property type="string" id="cFunc" mode="w">AVERAGE</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+</object>
 </tomanycont>
 </object>
 </objects>
